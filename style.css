@@ -1,14 +1,14 @@
 @font-face {
   font-family: domaine;
-  src: url(./domaine.ttf);
+  src: url(./fontfamily/domaine.ttf);
 }
 @font-face {
   font-family: editorial;
-  src: url(./editorial.ttf);
+  src: url(./fontfamily/editorial.ttf);
 }
 @font-face {
   font-family: canopee;
-  src: url(./canopee.ttf);
+  src: url(./fontfamily/canopee.ttf);
 }
 * {
   margin: 0;
@@ -19,12 +19,102 @@
 html, body {
   height: 100%;
   width: 100%;
+  cursor: none;
 }
 
-.main {
-  background-color: #1C1C19;
+::-webkit-scrollbar {
+  display: none;
 }
-.main .pagecontainer .paper-background {
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+.loader.preload-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+.loader .blundler-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.loader .blundler-container .blundler {
+  height: 100%;
+  flex: 1;
+  background-color: #1D1D1B;
+  transform-origin: top;
+}
+.loader #logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 30vw;
+  margin: auto;
+}
+.loader #logo path:nth-child(1) {
+  stroke-dasharray: 769.16;
+  stroke-dashoffset: 769.16;
+  animation: line-animation ease 2s forwards infinite;
+}
+.loader #logo path:nth-child(2) {
+  stroke-dasharray: 667.62;
+  stroke-dashoffset: 667.62;
+  animation: line-animation ease 2s forwards 0.3s infinite;
+}
+.loader #logo path:nth-child(3) {
+  stroke-dasharray: 702.82;
+  stroke-dashoffset: 702.82;
+  animation: line-animation ease 2s forwards 0.6s infinite;
+}
+.loader #logo path:nth-child(4) {
+  stroke-dasharray: 612.61;
+  stroke-dashoffset: 612.61;
+  animation: line-animation ease 2s forwards 0.9s infinite;
+}
+.loader #logo path:nth-child(5) {
+  stroke-dasharray: 499.51;
+  stroke-dashoffset: 499.51;
+  animation: line-animation ease 2s forwards 1.2s infinite;
+}
+.loader #logo path:nth-child(6) {
+  stroke-dasharray: 590.19;
+  stroke-dashoffset: 590.19;
+  animation: line-animation ease 2s forwards 1.5s infinite;
+}
+@keyframes line-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.cursor {
+  pointer-events: none;
+}
+.cursor__ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+.cursor__ball circle {
+  fill: #BEB5AB;
+}
+
+#main {
+  background-color: #1C1C19;
+  overflow-x: hidden;
+}
+#main .pagecontainer .paper-background {
   z-index: -2;
   opacity: 0.3;
   background-image: url("resources/peper_texture.webp");
@@ -36,7 +126,7 @@ html, body {
   right: 0%;
   bottom: 0%;
 }
-.main .pagecontainer .paper-color {
+#main .pagecontainer .paper-color {
   z-index: -2;
   position: absolute;
   top: 0%;
@@ -46,113 +136,215 @@ html, body {
   background-color: #C0B9B0;
   mix-blend-mode: multiply;
 }
-.main .pagecontainer nav {
+#main .pagecontainer .navlinks {
+  background-color: #1D1D1B;
+  color: #BEB5AB;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100vh;
+  width: 100vw;
+  z-index: 1;
+  clip-path: circle(10vw at 50% -8%);
+  -webkit-clip-path: circle(10vw at 50% -8%);
+  transition: all 1s ease-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 5vw;
+  pointer-events: none;
+}
+#main .pagecontainer .navlinks.open {
+  clip-path: circle(200vw at 100% -8%);
+  -webkit-clip-path: circle(200vw at 100% -8%);
+  pointer-events: all;
+}
+#main .pagecontainer .navlinks .links {
+  font-size: 15vw;
+  line-height: 13.5vw;
+  font-family: canopee;
+  transition: 0.9s ease-in-out;
+  opacity: 0;
+}
+#main .pagecontainer .navlinks .links a {
+  text-decoration: none;
+  color: #BEB5AB;
+}
+#main .pagecontainer .navlinks .links.fade {
+  opacity: 1;
+}
+#main .pagecontainer .navlinks .links:hover {
+  letter-spacing: 0.5vw;
+}
+#main .pagecontainer .navlinks span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main .pagecontainer .navlinks span a {
+  text-decoration: none;
+  color: #BEB5AB;
+  font-family: canopee;
+  font-size: 1.5vw;
+}
+#main .pagecontainer .navlinks span .circle {
+  aspect-ratio: 1;
+  width: 0.5vw;
+  border-radius: 50%;
+  background-color: #BEB5AB;
+  margin: 0 0.5vw;
+}
+#main .pagecontainer .navcontainer {
+  position: fixed;
+  width: 100vw;
+  height: 6vw;
+  border: 1px solid #76736D;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: #BEB5AB;
+  transition: 1.2s all ease-out;
+}
+#main .pagecontainer .navcontainer.bg_color {
+  background-color: #1C1C19;
+  border: 0;
+}
+#main .pagecontainer .navcontainer nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid #76736D;
-  width: 100vw;
-  height: 6vw;
-  z-index: 999;
-  background-color: #BEB5AB;
-  position: fixed;
+  width: 96vw;
+  margin: 0 2vw;
+  height: 100%;
 }
-.main .pagecontainer nav h5 {
-  position: relative;
+#main .pagecontainer .navcontainer nav .text {
   width: 30%;
+}
+#main .pagecontainer .navcontainer nav .text h5 {
   font-family: canopee;
   font-weight: 10;
-  margin-left: 3vw;
   font-size: 1.5vw;
-}
-.main .pagecontainer nav img {
-  position: relative;
   width: 10vw;
 }
-.main .pagecontainer nav i {
-  position: relative;
-  width: 30%;
-  margin-right: 3vw;
-  text-align: right;
-  color: #1D1D1B;
+#main .pagecontainer .navcontainer nav .text h5.colorchange {
+  color: #BEB5AB;
 }
-.main .pagecontainer .page1 {
+#main .pagecontainer .navcontainer nav .imgdiv {
+  width: 30%;
+  text-align: center;
+}
+#main .pagecontainer .navcontainer nav .imgdiv img {
+  width: 10vw;
+}
+#main .pagecontainer .navcontainer nav .hamburger {
+  width: 30%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+#main .pagecontainer .navcontainer nav .hamburger .linecontainer {
+  cursor: pointer;
+}
+#main .pagecontainer .navcontainer nav .hamburger .linecontainer .line {
+  width: 2vw;
+  height: 0.2vw;
+  background-color: #1C1C19;
+  margin-bottom: 0.2vw;
+  transition: all ease 0.3s;
+}
+#main .pagecontainer .navcontainer nav .hamburger .linecontainer .line.linecolor:first-child {
+  transform: rotate(45deg);
+  background-color: #BEB5AB;
+}
+#main .pagecontainer .navcontainer nav .hamburger .linecontainer .line.linecolor:last-child {
+  transform: rotate(-45deg) translateY(20%);
+  background-color: #BEB5AB;
+}
+#main .pagecontainer .navcontainer nav .hamburger .linecontainer:hover .line:first-child {
+  transform: translateX(0.2vw);
+}
+#main .pagecontainer .navcontainer nav .hamburger .linecontainer:hover .line:last-child {
+  transform: translateX(-0.2vw);
+}
+#main .pagecontainer #page {
   overflow: hidden;
   position: relative;
 }
-.main .pagecontainer .page1 .header {
+#main .pagecontainer #page .header {
   height: 25vw;
   margin-top: 8vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.main .pagecontainer .page1 .header .work1, .main .pagecontainer .page1 .header .work2 {
+#main .pagecontainer #page .header .work1, #main .pagecontainer #page .header .work2 {
   width: 30%;
   height: 100%;
 }
-.main .pagecontainer .page1 .header .work1 .image_div, .main .pagecontainer .page1 .header .work2 .image_div {
+#main .pagecontainer #page .header .work1 .image_div, #main .pagecontainer #page .header .work2 .image_div {
   height: 50%;
   width: 100%;
   overflow: hidden;
   border: 1px solid #76736D;
 }
-.main .pagecontainer .page1 .header .work1 .image_div img, .main .pagecontainer .page1 .header .work2 .image_div img {
+#main .pagecontainer #page .header .work1 .image_div img, #main .pagecontainer #page .header .work2 .image_div img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: all ease 0.5s;
 }
-.main .pagecontainer .page1 .header .work1 .image_div img:hover, .main .pagecontainer .page1 .header .work2 .image_div img:hover {
+#main .pagecontainer #page .header .work1 .image_div img:hover, #main .pagecontainer #page .header .work2 .image_div img:hover {
   scale: 1.1;
 }
-.main .pagecontainer .page1 .header .work1 h4, .main .pagecontainer .page1 .header .work2 h4 {
+#main .pagecontainer #page .header .work1 h4, #main .pagecontainer #page .header .work2 h4 {
   font-size: 1.5vw;
   margin-top: 1vw;
   font-family: canopee;
   margin-bottom: 1vw;
 }
-.main .pagecontainer .page1 .header .work1 h4 span, .main .pagecontainer .page1 .header .work2 h4 span {
+#main .pagecontainer #page .header .work1 h4 span, #main .pagecontainer #page .header .work2 h4 span {
   padding: 2px;
   border-radius: 2px;
   font-size: 1.2vw;
   font-weight: 100;
   color: white;
-  background-color: #B43B12;
+  background-color: #B93C12;
 }
-.main .pagecontainer .page1 .header .work1 p, .main .pagecontainer .page1 .header .work2 p {
+#main .pagecontainer #page .header .work1 p, #main .pagecontainer #page .header .work2 p {
   font-size: 1.3vw;
   font-family: editorial;
 }
-.main .pagecontainer .page1 .header .workAll {
+#main .pagecontainer #page .header .workAll {
   width: 25%;
   height: 100%;
   border-left: 1px solid #76736D;
   border-right: 1px solid #76736D;
   text-align: center;
 }
-.main .pagecontainer .page1 .header .workAll h1 {
+#main .pagecontainer #page .header .workAll h1 {
   font-family: canopee;
   font-size: 4vw;
   font-weight: 200;
   margin-bottom: 1vw;
 }
-.main .pagecontainer .page1 .header .workAll h3 {
+#main .pagecontainer #page .header .workAll h3 {
   font-family: editorial;
   font-weight: 20;
   font-size: 2.5vw;
   margin-bottom: 2vw;
 }
-.main .pagecontainer .page1 .header .workAll p {
+#main .pagecontainer #page .header .workAll p {
   font-family: editorial;
   font-weight: 100;
+  font-size: 1.5vw;
 }
-.main .pagecontainer .page1 .header .workAll p span {
+#main .pagecontainer #page .header .workAll p span {
   font-family: canopee;
   font-weight: bolder;
 }
-.main .pagecontainer .page1 #curate {
+#main .pagecontainer #page #curate {
   font-size: 34vw;
   letter-spacing: -1.5vw;
   font-weight: 300;
@@ -165,14 +357,14 @@ html, body {
   margin-left: 2vw;
   padding-left: 1vw;
 }
-.main .pagecontainer .page1 .info {
+#main .pagecontainer #page .info {
   margin-top: 4vw;
   padding: 0 2vw 0 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main .pagecontainer .page1 .info .info1 {
+#main .pagecontainer #page .info .info1 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,17 +372,17 @@ html, body {
   border-right: 1px solid #1D1D1B;
   width: 40%;
 }
-.main .pagecontainer .page1 .info .info1 .info1-text1 {
+#main .pagecontainer #page .info .info1 .info1-text1 {
   margin-bottom: 2vw;
 }
-.main .pagecontainer .page1 .info .info1 .info1-text1 h3 {
+#main .pagecontainer #page .info .info1 .info1-text1 h3 {
   text-align: center;
   font-family: canopee;
   font-size: 8vw;
   font-weight: 500;
   color: #1C1C19;
 }
-.main .pagecontainer .page1 .info .info1 .info1-text1 h1 {
+#main .pagecontainer #page .info .info1 .info1-text1 h1 {
   font-family: canopee;
   color: #1C1C19;
   font-size: 10vw;
@@ -198,15 +390,15 @@ html, body {
   line-height: 6vw;
   text-align: center;
 }
-.main .pagecontainer .page1 .info .info1 .info1-image img {
+#main .pagecontainer #page .info .info1 .info1-image img {
   width: 35vw;
   height: 40vw;
   border: 2px solid #1D1D1B;
 }
-.main .pagecontainer .page1 .info .info1 .info1-text2 {
+#main .pagecontainer #page .info .info1 .info1-text2 {
   margin-top: 2vw;
 }
-.main .pagecontainer .page1 .info .info1 .info1-text2 span {
+#main .pagecontainer #page .info .info1 .info1-text2 span {
   font-size: 6vw;
   color: #BEB5AB;
   background-color: #1D1D1B;
@@ -218,43 +410,43 @@ html, body {
   border-radius: 10%;
   margin-right: 0.5vw;
 }
-.main .pagecontainer .page1 .info .info1 .info1-text2 p {
+#main .pagecontainer #page .info .info1 .info1-text2 p {
   font-size: 3vw;
   font-family: editorial;
   line-height: 3vw;
   margin: 0 2vw 0 2vw;
 }
-.main .pagecontainer .page1 .info .info2 {
+#main .pagecontainer #page .info .info2 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-.main .pagecontainer .page1 .info .info2 .info2-image {
+#main .pagecontainer #page .info .info2 .info2-image {
   margin-bottom: 3vw;
 }
-.main .pagecontainer .page1 .info .info2 .info2-image img {
+#main .pagecontainer #page .info .info2 .info2-image img {
   width: 56.5vw;
   height: 45vw;
   border: 2px solid #1D1D1B;
 }
-.main .pagecontainer .page1 .info .info2 .info2-text h1 {
+#main .pagecontainer #page .info .info2 .info2-text h1 {
   color: #1C1C19;
   font-family: canopee;
   font-size: 7vw;
   font-weight: 500;
   line-height: 6vw;
 }
-.main .pagecontainer .page1 #website {
+#main .pagecontainer #page #website {
   margin: 3vw 2vw 0 2vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main .pagecontainer .page1 #website .textwebsite {
+#main .pagecontainer #page #website .textwebsite {
   width: 75%;
 }
-.main .pagecontainer .page1 #website .textwebsite h1 {
+#main .pagecontainer #page #website .textwebsite h1 {
   font-family: canopee;
   font-size: 25vw;
   font-weight: 500;
@@ -263,13 +455,13 @@ html, body {
   padding: 0 2vw;
   line-height: 22vw;
 }
-.main .pagecontainer .page1 #website .myimage {
+#main .pagecontainer #page #website .myimage {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.main .pagecontainer .page1 #website .myimage .circle {
+#main .pagecontainer #page #website .myimage .circle {
   position: relative;
   aspect-ratio: 1;
   width: 22vw;
@@ -278,7 +470,7 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-.main .pagecontainer .page1 #website .myimage .circle .logo {
+#main .pagecontainer #page #website .myimage .circle .logo {
   position: absolute;
   width: 18vw;
   aspect-ratio: 1;
@@ -288,14 +480,14 @@ html, body {
   background-size: contain;
   filter: contrast(90%);
 }
-.main .pagecontainer .page1 #website .myimage .circle .text {
+#main .pagecontainer #page #website .myimage .circle .text {
   font-family: canopee;
   position: absolute;
   width: 100%;
   height: 100%;
   animation: rotateText 10s infinite linear;
 }
-.main .pagecontainer .page1 #website .myimage .circle span {
+#main .pagecontainer #page #website .myimage .circle span {
   position: absolute;
   font-size: 2vw;
   left: 50%;
@@ -309,28 +501,28 @@ html, body {
     transform: rotate(0deg);
   }
 }
-.main .pagecontainer .page1 #All_work {
+#main .pagecontainer #page #All_work {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 5vw;
   padding: 0 1vw 0 2vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container {
+#main .pagecontainer #page #All_work .upcoming_container {
   border-right: 1px solid #1C1C19;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2vw;
   margin-bottom: 3vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_first {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first {
   width: 30vw;
   border-right: 1px solid #1C1C19;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_first h1 {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h1 {
   text-align: left;
   font-size: 4vw;
   font-family: canopee;
@@ -338,7 +530,7 @@ html, body {
   letter-spacing: 0.02vw;
   margin-bottom: 2vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_first h3 {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h3 {
   text-align: left;
   font-family: editorial;
   font-weight: 90;
@@ -346,75 +538,75 @@ html, body {
   color: #1D1D1B;
   line-height: 3vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_first h4 {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 {
   font-family: editorial;
   font-weight: 200;
   font-size: 2vw;
   margin-top: 2vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_first h4 span {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 span {
   font-family: canopee;
   font-weight: 500;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_second {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second {
   width: 30vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer {
   width: 90%;
   overflow: hidden;
   margin-bottom: 0.5vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer img {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: 0.5s all ease-in-out;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer img:hover {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer img:hover {
   transform: scale(1.1);
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_second h3 {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second h3 {
   font-family: canopee;
   font-weight: 200;
   font-size: 2vw;
   margin-bottom: 0.5vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming .upcoming_second p {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second p {
   font-family: editorial;
   font-size: 1.2vw;
 }
-.main .pagecontainer .page1 #All_work .upcoming_container .upcoming_image img {
+#main .pagecontainer #page #All_work .upcoming_container .upcoming_image img {
   width: 60vw;
 }
-.main .pagecontainer .page1 #All_work .deliver {
+#main .pagecontainer #page #All_work .deliver {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   margin-left: 1vw;
 }
-.main .pagecontainer .page1 #All_work .deliver h1 {
+#main .pagecontainer #page #All_work .deliver h1 {
   font-family: canopee;
   color: #1C1C19;
   font-size: 6.5vw;
   font-weight: 200;
   margin-bottom: 5vw;
 }
-.main .pagecontainer .page1 #All_work .deliver h1 span {
+#main .pagecontainer #page #All_work .deliver h1 span {
   font-size: 13.5vw;
   font-weight: 500;
   background-color: #1C1C19;
   color: #BEB5AB;
 }
-.main .pagecontainer .page1 #All_work .deliver .first_part {
+#main .pagecontainer #page #All_work .deliver .first_part {
   font-family: editorial;
   font-size: 2vw;
   font-weight: 90;
   color: #1C1C19;
   margin-left: 1vw;
 }
-.main .pagecontainer .page1 #All_work .deliver .first_part .A {
+#main .pagecontainer #page #All_work .deliver .first_part .A {
   font-size: 5vw;
   background-color: #1C1C19;
   color: #BEB5AB;
@@ -424,14 +616,14 @@ html, body {
   float: left;
   margin-right: 1vw;
 }
-.main .pagecontainer .page1 #All_work .deliver .second_part {
+#main .pagecontainer #page #All_work .deliver .second_part {
   font-family: editorial;
   font-size: 2vw;
   font-weight: 90;
   color: #1C1C19;
   margin: 2vw 0 0 1vw;
 }
-.main .pagecontainer .page1 #All_work .deliver .btn {
+#main .pagecontainer #page #All_work .deliver .btn {
   position: relative;
   width: 80%;
   height: 12vw;
@@ -443,18 +635,18 @@ html, body {
   border: 1px solid #1C1C19;
   overflow-x: hidden;
 }
-.main .pagecontainer .page1 #All_work .deliver .btn:hover img {
+#main .pagecontainer #page #All_work .deliver .btn:hover img {
   transform: translate(50%);
 }
-.main .pagecontainer .page1 #All_work .deliver .btn:hover h1 {
+#main .pagecontainer #page #All_work .deliver .btn:hover h1 {
   transform: translate(140%);
 }
-.main .pagecontainer .page1 #All_work .deliver .btn img {
+#main .pagecontainer #page #All_work .deliver .btn img {
   height: 4vw;
   transform: translateX(-120%);
   transition: 1s all ease;
 }
-.main .pagecontainer .page1 #All_work .deliver .btn h1 {
+#main .pagecontainer #page #All_work .deliver .btn h1 {
   position: absolute;
   top: 30%;
   left: 15%;
@@ -462,7 +654,7 @@ html, body {
   font-weight: 100;
   transition: 1s all ease;
 }
-.main .pagecontainer .page1 #journey {
+#main .pagecontainer #page #journey {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -470,7 +662,7 @@ html, body {
   border-top: 1px solid #1C1C19;
   border-bottom: 1px solid #1C1C19;
 }
-.main .pagecontainer .page1 #journey .first, .main .pagecontainer .page1 #journey .fourt, .main .pagecontainer .page1 #journey .third, .main .pagecontainer .page1 #journey .second {
+#main .pagecontainer #page #journey .first, #main .pagecontainer #page #journey .fourt, #main .pagecontainer #page #journey .third, #main .pagecontainer #page #journey .second {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -478,66 +670,66 @@ html, body {
   color: #1D1D1B;
   padding: 3vw 0;
 }
-.main .pagecontainer .page1 #journey .first h3, .main .pagecontainer .page1 #journey .fourt h3, .main .pagecontainer .page1 #journey .third h3, .main .pagecontainer .page1 #journey .second h3 {
+#main .pagecontainer #page #journey .first h3, #main .pagecontainer #page #journey .fourt h3, #main .pagecontainer #page #journey .third h3, #main .pagecontainer #page #journey .second h3 {
   text-align: center;
   font-size: 3vw;
   font-weight: 100;
 }
-.main .pagecontainer .page1 #journey .first h3 span, .main .pagecontainer .page1 #journey .fourt h3 span, .main .pagecontainer .page1 #journey .third h3 span, .main .pagecontainer .page1 #journey .second h3 span {
+#main .pagecontainer #page #journey .first h3 span, #main .pagecontainer #page #journey .fourt h3 span, #main .pagecontainer #page #journey .third h3 span, #main .pagecontainer #page #journey .second h3 span {
   font-size: 3.5vw;
   font-weight: 500;
 }
-.main .pagecontainer .page1 #journey .first .num, .main .pagecontainer .page1 #journey .fourt .num, .main .pagecontainer .page1 #journey .third .num, .main .pagecontainer .page1 #journey .second .num {
+#main .pagecontainer #page #journey .first .num, #main .pagecontainer #page #journey .fourt .num, #main .pagecontainer #page #journey .third .num, #main .pagecontainer #page #journey .second .num {
   font-size: 8vw;
   margin-left: 0.5vw;
 }
-.main .pagecontainer .page1 #journey .second h3 span {
+#main .pagecontainer #page #journey .second h3 span {
   font-family: 500;
 }
-.main .pagecontainer .page1 #journey .second h3 .development {
+#main .pagecontainer #page #journey .second h3 .development {
   font-size: 4.5vw;
 }
-.main .pagecontainer .page1 #journey .third h3 span {
+#main .pagecontainer #page #journey .third h3 span {
   font-size: 4vw;
   letter-spacing: 0.3vw;
 }
-.main .pagecontainer .page1 #hero_container {
+#main .pagecontainer #page #hero_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: 0 2vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_one {
+#main .pagecontainer #page #hero_container .hero_one {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part1 {
+#main .pagecontainer #page #hero_container .hero_one .part1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part1 .part1_one {
+#main .pagecontainer #page #hero_container .hero_one .part1 .part1_one {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part1 .part1_one .image img {
+#main .pagecontainer #page #hero_container .hero_one .part1 .part1_one .image img {
   border: 2px solid #1C1C19;
   width: 13vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part1 .part1_one h1 {
+#main .pagecontainer #page #hero_container .hero_one .part1 .part1_one h1 {
   font-size: 33vw;
   font-family: canopee;
   color: #1C1C19;
   font-weight: 500;
   letter-spacing: -1.5vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part1 .part1_two h1 {
+#main .pagecontainer #page #hero_container .hero_one .part1 .part1_two h1 {
   line-height: 15vw;
   font-size: 30vw;
   font-family: canopee;
@@ -545,24 +737,24 @@ html, body {
   font-weight: 500;
   letter-spacing: -1.5vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part2 {
+#main .pagecontainer #page #hero_container .hero_one .part2 {
   position: relative;
   transform: translateY(9%);
 }
-.main .pagecontainer .page1 #hero_container .hero_one .part2 img {
+#main .pagecontainer #page #hero_container .hero_one .part2 img {
   border: 2px solid #1C1C19;
   width: 50vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_two {
+#main .pagecontainer #page #hero_container .hero_two {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main .pagecontainer .page1 #hero_container .hero_two .image img {
+#main .pagecontainer #page #hero_container .hero_two .image img {
   border: 2px solid #1C1C19;
   width: 23.5vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_two h1 {
+#main .pagecontainer #page #hero_container .hero_two h1 {
   font-size: 30vw;
   font-weight: 500;
   color: #1C1C19;
@@ -570,13 +762,13 @@ html, body {
   font-weight: 500;
   letter-spacing: -1.5vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_three {
+#main .pagecontainer #page #hero_container .hero_three {
   display: flex;
   justify-content: space-between;
   align-items: center;
   transform: translateY(-20%);
 }
-.main .pagecontainer .page1 #hero_container .hero_three h1 {
+#main .pagecontainer #page #hero_container .hero_three h1 {
   font-family: canopee;
   font-size: 21vw;
   color: #BEB5AB;
@@ -587,18 +779,18 @@ html, body {
   margin-right: 2vw;
   padding: 0 2vw 0 1vw;
 }
-.main .pagecontainer .page1 #hero_container .hero_three .text p {
+#main .pagecontainer #page #hero_container .hero_three .text p {
   font-family: editorial;
   font-size: 1.5vw;
   font-weight: 100;
 }
-.main .pagecontainer .page1 #hero_container .hero_three .text div {
+#main .pagecontainer #page #hero_container .hero_three .text div {
   font-size: 10vw;
   line-height: 8vw;
   color: #1C1C19;
   font-weight: 900;
 }
-.main .pagecontainer .page1 #footer_work {
+#main .pagecontainer #page #footer_work {
   height: 25vw;
   display: flex;
   justify-content: space-around;
@@ -607,72 +799,73 @@ html, body {
   margin: 0 2vw 2vw;
   padding-top: 2vw;
 }
-.main .pagecontainer .page1 #footer_work .work_one, .main .pagecontainer .page1 #footer_work .work_two {
+#main .pagecontainer #page #footer_work .work_one, #main .pagecontainer #page #footer_work .work_two {
   width: 30%;
   height: 100%;
 }
-.main .pagecontainer .page1 #footer_work .work_one .image_div, .main .pagecontainer .page1 #footer_work .work_two .image_div {
+#main .pagecontainer #page #footer_work .work_one .image_div, #main .pagecontainer #page #footer_work .work_two .image_div {
   height: 50%;
   width: 100%;
   overflow: hidden;
   border: 1px solid #76736D;
 }
-.main .pagecontainer .page1 #footer_work .work_one .image_div img, .main .pagecontainer .page1 #footer_work .work_two .image_div img {
+#main .pagecontainer #page #footer_work .work_one .image_div img, #main .pagecontainer #page #footer_work .work_two .image_div img {
   height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   transition: all ease 0.5s;
 }
-.main .pagecontainer .page1 #footer_work .work_one .image_div img:hover, .main .pagecontainer .page1 #footer_work .work_two .image_div img:hover {
+#main .pagecontainer #page #footer_work .work_one .image_div img:hover, #main .pagecontainer #page #footer_work .work_two .image_div img:hover {
   scale: 1.1;
 }
-.main .pagecontainer .page1 #footer_work .work_one h4, .main .pagecontainer .page1 #footer_work .work_two h4 {
+#main .pagecontainer #page #footer_work .work_one h4, #main .pagecontainer #page #footer_work .work_two h4 {
   font-size: 1.5vw;
   margin-top: 1vw;
   font-family: canopee;
   margin-bottom: 1vw;
 }
-.main .pagecontainer .page1 #footer_work .work_one h4 span, .main .pagecontainer .page1 #footer_work .work_two h4 span {
+#main .pagecontainer #page #footer_work .work_one h4 span, #main .pagecontainer #page #footer_work .work_two h4 span {
   padding: 2px;
   border-radius: 2px;
   font-size: 1.2vw;
   font-weight: 100;
   color: white;
-  background-color: #B43B12;
+  background-color: #B93C12;
 }
-.main .pagecontainer .page1 #footer_work .work_one p, .main .pagecontainer .page1 #footer_work .work_two p {
+#main .pagecontainer #page #footer_work .work_one p, #main .pagecontainer #page #footer_work .work_two p {
   font-size: 1.3vw;
   font-family: editorial;
 }
-.main .pagecontainer .page1 #footer_work .work_All {
+#main .pagecontainer #page #footer_work .work_All {
   width: 25%;
   height: 100%;
   border-left: 1px solid #76736D;
   border-right: 1px solid #76736D;
   text-align: center;
 }
-.main .pagecontainer .page1 #footer_work .work_All h1 {
+#main .pagecontainer #page #footer_work .work_All h1 {
   font-family: canopee;
   font-size: 4vw;
   font-weight: 200;
   margin-bottom: 1vw;
 }
-.main .pagecontainer .page1 #footer_work .work_All h3 {
+#main .pagecontainer #page #footer_work .work_All h3 {
   font-family: editorial;
   font-weight: 20;
   font-size: 2.5vw;
   margin-bottom: 2vw;
 }
-.main .pagecontainer .page1 #footer_work .work_All p {
+#main .pagecontainer #page #footer_work .work_All p {
   font-family: editorial;
   font-weight: 100;
+  font-size: 1.5vw;
 }
-.main .pagecontainer .page1 #footer_work .work_All p span {
+#main .pagecontainer #page #footer_work .work_All p span {
   font-family: canopee;
   font-weight: bolder;
 }
-.main .pagecontainer .page1 #email {
+#main .pagecontainer #page #email {
   height: 10vw;
   width: 96vw;
   border-top: 1px solid #1C1C19;
@@ -685,13 +878,13 @@ html, body {
   overflow-y: hidden;
   margin: 0 2vw;
 }
-.main .pagecontainer .page1 #email::-webkit-scrollbar {
+#main .pagecontainer #page #email::-webkit-scrollbar {
   display: none;
 }
-.main .pagecontainer .page1 #email:hover h1 {
+#main .pagecontainer #page #email:hover h1 {
   animation-play-state: paused;
 }
-.main .pagecontainer .page1 #email h1 {
+#main .pagecontainer #page #email h1 {
   font-size: 5vw;
   font-family: domaine;
   font-weight: 100;
@@ -700,7 +893,7 @@ html, body {
   animation: movingText 4s infinite linear;
   color: #1C1C19;
 }
-.main .pagecontainer .page1 #email h1 a {
+#main .pagecontainer #page #email h1 a {
   font-family: canopee;
   background-color: #1C1C19;
   color: #BEB5AB;
@@ -715,7 +908,7 @@ html, body {
     transform: translateX(calc(-100% - 4px - 0.5vw));
   }
 }
-.main .pagecontainer .page1 #footer {
+#main .pagecontainer #page #footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -723,13 +916,13 @@ html, body {
   width: 100%;
   height: 6vw;
 }
-.main .pagecontainer .page1 #footer h4 {
+#main .pagecontainer #page #footer h4 {
   font-family: canopee;
   font-size: 2vw;
   font-weight: 100;
   display: flex;
 }
-.main .pagecontainer .page1 #footer h4 span {
+#main .pagecontainer #page #footer h4 span {
   aspect-ratio: 1;
   width: 1vw;
   border-radius: 100%;
@@ -737,22 +930,31 @@ html, body {
   font-size: 0.9vw;
   margin-left: 0.5vw;
 }
-.main .pagecontainer .page1 #footer span {
+#main .pagecontainer #page #footer span {
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translateX(-20%);
 }
-.main .pagecontainer .page1 #footer span a {
+#main .pagecontainer #page #footer span a {
   text-decoration: none;
   color: #1C1C19;
   font-family: canopee;
   font-size: 1.5vw;
 }
-.main .pagecontainer .page1 #footer span .circle {
+#main .pagecontainer #page #footer span .circle {
   aspect-ratio: 1;
   width: 0.5vw;
   border-radius: 50%;
   background-color: #1C1C19;
   margin: 0 0.5vw;
+}
+
+@media (max-width: 768px) {
+  #main .navlinks .links {
+    font-size: 50vw;
+  }
+  #main .navcontainer {
+    width: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

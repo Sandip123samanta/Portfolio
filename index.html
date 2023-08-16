@@ -7,23 +7,81 @@
     <title>Curate - Paper portfolio</title>
     <link rel="icon" type="image/x-icon" href="./resources/favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="main">
-       
+    <div class="loader">
+        <div class="blundler-container">
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+            <div class="blundler"></div>
+        </div>
+
+        <svg width="507" height="150" viewBox="0 0 507 150" fill="none" xmlns="http://www.w3.org/2000/svg" id="logo">
+            <path d="M124.4 86.6H144.4C141.333 103.8 133.2 117.933 120 129C106.933 140.067 91.6667 145.6 74.2 145.6C54.8667 145.6 38.3333 138.667 24.6 124.8C10.8667 110.933 4 94.2667 4 74.8C4 55.4667 10.8667 38.9333 24.6 25.2C38.4667 11.3333 55.1333 4.39999 74.6 4.39999C90.7333 4.39999 105.133 9.33333 117.8 19.2C130.467 29.0667 138.867 41.9333 143 57.8H130.8C130.267 46.3333 126.2 37.0667 118.6 30C111 22.8 101.467 19.2 90 19.2C72 19.2 55.5333 26.6667 40.6 41.6C25.6667 56.4 18.2 72.8 18.2 90.8C18.2 102.8 22.0667 112.6 29.8 120.2C37.5333 127.667 47.4667 131.4 59.6 131.4C72.6667 131.4 85.2667 127.133 97.4 118.6C109.533 109.933 118.533 99.2667 124.4 86.6Z" stroke="#BEB5AB" stroke-width="3" mask="url(#path-1-outside-1_2_3)"/>
+            <path d="M209.223 15.4L198.023 4.99999H229.623L218.423 15.4V117.4C218.423 125.267 215.623 131.933 210.023 137.4C204.423 142.867 197.49 145.6 189.223 145.6C181.09 145.6 174.157 142.867 168.423 137.4C162.823 131.933 160.023 125.333 160.023 117.6V11.8L152.423 4.99999H190.023L182.423 11.8V117C182.423 120.733 183.69 123.933 186.223 126.6C188.89 129.133 192.09 130.4 195.823 130.4C199.69 130.4 202.89 129.2 205.423 126.8C207.957 124.4 209.223 121.067 209.223 116.8V15.4Z" stroke="#BEB5AB" stroke-width="3" mask="url(#path-1-outside-1_2_3)"/>
+            <path d="M267.888 108.2C280.021 118.6 291.421 120.267 302.087 113.2V145.6C301.554 145.733 300.821 145.8 299.888 145.8C298.954 145.933 297.021 145.6 294.087 144.8C291.287 144 288.488 142.733 285.688 141C282.888 139.133 279.554 136 275.688 131.6C271.821 127.067 268.221 121.533 264.888 115V138.2L272.288 145H235.087L242.488 138.2V11.4L234.087 4.99999H264.888C275.288 4.99999 284.288 10.0667 291.888 20.2C299.488 30.3333 303.288 42.5333 303.288 56.8C303.288 70.1333 299.821 81.8 292.888 91.8C285.954 101.667 277.621 107.133 267.888 108.2ZM264.888 11V102.4C269.288 102.4 273.021 98 276.087 89.2C279.154 80.2667 280.688 69.4667 280.688 56.8C280.688 44.1333 279.154 33.3333 276.087 24.4C273.021 15.4667 269.288 11 264.888 11Z" stroke="#BEB5AB" stroke-width="3" mask="url(#path-1-outside-1_2_3)"/>
+            <path d="M332.883 11.8L330.883 4.99999H353.283L374.083 138.2L382.283 145H343.083L351.483 138.2L347.883 114.8H326.083L322.483 138.2L330.083 145H305.883L313.483 138.2L332.883 11.8ZM346.483 105.6L336.683 42.8L327.483 105.6H346.483Z" stroke="#BEB5AB" stroke-width="3" mask="url(#path-1-outside-1_2_3)"/>
+            <path d="M386.819 14.2L377.819 34.2V4.99999H443.819V34.2L434.819 14.2H422.019V138.2L429.619 145H392.219L399.619 138.2V14.2H386.819Z" stroke="#BEB5AB" stroke-width="3" mask="url(#path-1-outside-1_2_3)"/>
+            <path d="M457.908 138.2V11.8L449.908 4.99999H502.508V34.2L493.508 14.2H480.308V68.8H484.908L493.308 50V96.4L485.108 78H480.308V135.8H493.508L502.508 115.8V145H449.908L457.908 138.2Z" stroke="#BEB5AB" stroke-width="3" mask="url(#path-1-outside-1_2_3)"/>
+            </svg>             
+    </div>
+    <div class="cursor">
+        <div class="cursor__ball cursor__ball--big ">
+          <svg height="30" width="30">
+            <circle cx="15" cy="15" r="12" stroke-width="0"></circle>
+          </svg>
+        </div>
+        
+        <div class="cursor__ball cursor__ball--small">
+          <svg height="10" width="10">
+            <circle cx="5" cy="5" r="4" stroke-width="0"></circle>
+          </svg>
+        </div>
+    </div>
+    <div id="main">
+        
         <div class="pagecontainer">
             <div class="paper-background"></div>
             <div class="paper-color"></div>
-            <nav>
-                <h5>West Medinipur,IND</h5>
-                <img src="resources/portfolio_img.svg" alt="the paper portfolio">
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
-            </nav>
-        <div class="page1">     
+            <div class="navlinks">
+                <h1 class="links hoverables"><a href="index.html">INDEX</a></h1>
+                <h1 class="links hoverables"><a href="Work.html">WORK</a></h1>
+                <h1 class="links hoverables"><a href="About.html">ABOUT</a></h1>
+                <span>
+                    <a href="https://twitter.com/SandipS90189627" class="social twitter">TWITTER</a><div class="circle"></div>
+                    <a href="https://www.linkedin.com/in/sandip-samanta-354a21281/" class="social linkdin">LINKDIN</a><div class="circle"></div>
+                    <a href="https://leetcode.com/sandipsamanta/" class="social leetcode">LEETCODE</a><div class="circle"></div>
+                    <a href="https://github.com/Sandip123samanta?tab=repositories" class="social github">GITHUB</a>
+                </span>
+            </div>
+            <div class="navcontainer">
+                <nav>
+                    <div class="text">
+                        <h5>West Medinipur,IND</h5>
+                    </div>
+                    <div class="imgdiv">
+                        <a href="index.html"><img src="resources/portfolio_img.svg" alt="the paper portfolio"></a>
+                    </div>
+                    <div class="hamburger">
+                        <div class="linecontainer hoverables">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        <div id="page">     
         <div class="header">
             <div class="work1">
                 <div class="image_div">
@@ -35,7 +93,7 @@
             <div class="workAll">
                 <h1>ALL WORK!</h1>
                 <h3>A Featured selection <br>the latest work - <br>of the last years.</h3>
-                <p><span>TIP!</span>Drag sideways to nevigate</p>
+                <p><span>TIP!</span>Open in Desktop</p>
             </div>
             <div class="work2">
                 <div class="image_div">
@@ -102,9 +160,9 @@
         </div>
             <div class="deliver">
                 <h1>THINK, CREATE<br><span>DELIVER</span></h1>
-                <p class="first_part"><span class="A">A</span>strong project is created by deep collaboration. I design, develop, and deliver websites that drive results and win awards. </p>
+                <p class="first_part"><span class="A">A</span>strong project is created by deep collaboration. I design, develop, and deliver websites that drive results. </p>
                 <p class="second_part">Like an artisan, I like to start from raw matter and give life to an iconic product that makes your brand stand out, starting from a Visual Strategy that guide the client's vision to reality.</p>
-                <a class="btn" href="#">
+                <a class="btn" href="Work.html">
                     <img src="https://uploads-ssl.webflow.com/5f2429f172d117fcee10e819/61001a3509319b6ae39e156b_arrow-long.svg" alt="">
                     <h1>All WORKS</h1>
                 </a>
@@ -167,7 +225,7 @@
             <div class="work_All">
                 <h1>ALL WORK!</h1>
                 <h3>Handpicked highlights - <br>spanning the last few<br>months.</h3>
-                <p><span>TIP!</span>Drag sideways to nevigate</p>
+                <p><span>TIP!</span>Open in Desktop</p>
             </div>
             <div class="work_two">
                 <div class="image_div">
@@ -186,17 +244,18 @@
         <div id="footer">
             <h4>CURATE<span>C</span></h4>
             <span>
-                <a href="#" class="social twitter">TWITTER</a><div class="circle"></div>
-                <a href="#" class="social linkdin">LINKDIN</a><div class="circle"></div>
-                <a href="#" class="social leetcode">LEETCODE</a><div class="circle"></div>
-                <a href="#" class="social github">GITHUB</a>
+                <a href="https://twitter.com/SandipS90189627" class="social twitter">TWITTER</a><div class="circle"></div>
+                    <a href="https://www.linkedin.com/in/sandip-samanta-354a21281/" class="social linkdin">LINKDIN</a><div class="circle"></div>
+                    <a href="https://leetcode.com/sandipsamanta/" class="social leetcode">LEETCODE</a><div class="circle"></div>
+                    <a href="https://github.com/Sandip123samanta?tab=repositories" class="social github">GITHUB</a>
             </span>
         </div>
     </div>
     </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="script.js"></script>  
+    <script src="./javascript/script.js"></script>  
 </body>
 </html>
 

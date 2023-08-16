@@ -1,19 +1,19 @@
-@import "mixin";
+@import "_mixin.scss";
 @import "var";
 
 @font-face {
    font-family: domaine;
-   src: url(./domaine.ttf);
+   src: url(./fontfamily/domaine.ttf);
 }
 
 @font-face {
    font-family: editorial;
-   src: url(./editorial.ttf);
+   src: url(./fontfamily/editorial.ttf);
 }
 
 @font-face {
    font-family: canopee;
-   src: url(./canopee.ttf);
+   src: url(./fontfamily/canopee.ttf);
 }
 
 *{
@@ -24,14 +24,115 @@
 
 html,body{
    height: 100%;
-   width: 100%;
-  
+   width: 100%; 
+   cursor: none;
 }
-.main{
-   background-color: #1C1C19;
-  
-   .pagecontainer{
+
+::-webkit-scrollbar{
+   display: none;
+}
+
+.loader{
+   width: 100vw;
+   height: 100vh;
+   position: absolute;
+   z-index: 999;
+   pointer-events: none;
+   transition: opacity .5s ease;
+
+   &.preload-finish{
+       opacity: 0;
+       pointer-events: none;
+   }
+
+
+   .blundler-container{
+       position: absolute;
+       top: 0;
+       display: flex;
+       width: 100%;
+       height: 100vh;
+
+       .blundler{
+           height: 100%;
+           flex: 1;
+           background-color: $navbg;
+           transform-origin: top;
+       }
+   }
+
+   #logo{
+       position: absolute;
+       top: 0;
+       right: 0;
+       left: 0;
+       bottom: 0;
+       width: 30vw;
+       margin: auto;
+
+       path:nth-child(1){
+           stroke-dasharray: 769.16;
+           stroke-dashoffset: 769.16;
+           animation: line-animation ease 2s forwards infinite;
+       }
+       path:nth-child(2){
+           stroke-dasharray: 667.62;
+           stroke-dashoffset: 667.62;
+           animation: line-animation ease 2s forwards .3s infinite;
+       }
+       path:nth-child(3){
+           stroke-dasharray: 702.82;
+           stroke-dashoffset: 702.82;
+           animation: line-animation ease 2s forwards .6s infinite;
+       }
+       path:nth-child(4){
+           stroke-dasharray: 612.61;
+           stroke-dashoffset: 612.61;
+           animation: line-animation ease 2s forwards .9s infinite;
+       }
+       path:nth-child(5){
+           stroke-dasharray: 499.51;
+           stroke-dashoffset: 499.51;
+           animation: line-animation ease 2s forwards 1.2s infinite;
+       }
+       path:nth-child(6){
+           stroke-dasharray: 590.19;
+           stroke-dashoffset: 590.19;
+           animation: line-animation ease 2s forwards 1.5s infinite;
+       }
+
+
+
+       @keyframes line-animation{
+           to{
+               stroke-dashoffset: 0;
+           }
+       }
+   }
+}
+
+ .cursor {
+    pointer-events: none;
+    
+    &__ball {
+      position: fixed;
+      top: 0;
+      left: 0;
+      mix-blend-mode: difference;
+      z-index: 1000;
       
+      circle {
+        fill: $navlink_color;
+      }
+    }      
+  } 
+  
+
+#main{
+   background-color: #1C1C19;
+   overflow-x: hidden;
+   
+   .pagecontainer{
       .paper-background {
          z-index: -2;
          opacity: .3;
@@ -54,41 +155,159 @@ html,body{
          bottom: 0%;
          background-color: #C0B9B0;
          mix-blend-mode: multiply;
-      }
-      nav{
-         @include flexProperty(space-between);
-         border: 1px solid $line_color;
+      } 
+
+      .navlinks{
+         background-color: $navbg;
+         color: $navlink_color;
+         position: absolute;
+         top: 0%;
+         left: 0%;
+         height: 100vh;
+         width: 100vw;
+         z-index: 1;
+         clip-path: circle(10vw at 50% -8%);
+         -webkit-clip-path: circle(10vw at 50% -8%);
+         transition: all 1s ease-out;
+         @include flexProperty(center);
+         flex-direction: column;
+         padding-top: 5vw;
+         pointer-events: none;
+
+         &.open{
+            clip-path: circle(200vw at 100% -8%);
+            -webkit-clip-path: circle(200vw at 100% -8%);
+            pointer-events: all;
+         }
+
+        .links{
+           font-size: 15vw;
+           line-height: 13.5vw;
+           font-family: canopee;
+           transition: .9s ease-in-out;
+           opacity: 0;
+
+           a{
+              text-decoration: none;
+              color:$navlink_color;
+           }
+
+           &.fade{
+            opacity: 1;
+           }
+        }
+
+        .links:hover{
+           letter-spacing: .5vw;
+        }
+
+        span{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+  
+           a{
+              text-decoration: none;
+              color: $navlink_color;
+              font-family: canopee;
+              font-size: 1.5vw;
+           }
+  
+           .circle{
+              aspect-ratio: 1;
+              width: .5vw;
+              border-radius: 50%;
+              background-color: $navlink_color;
+              margin: 0 .5vw;
+           }
+        }
+       }
+
+      .navcontainer{
+         position: fixed;
          width: 100vw;
          height: 6vw;
-         z-index: 999;
+         border: 1px solid $line_color;
+         z-index: 2;
+         top: 0;
+         left: 0;
          background-color: $navlink_color;
-         position: fixed;
-   
-         h5{
-            position: relative;
-            width: 30%;
-            font-family: canopee;
-            font-weight: 10;
-            margin-left: 3vw;
-            font-size: 1.5vw;
+         transition: 1.2s all ease-out;
+
+         &.bg_color{
+            background-color:$font_back;
+            border: 0;
          }
-   
-         img{
-            position: relative;
-            width: 10vw;
-         }
-   
-         i{
-            position: relative;
+
+         nav{
+            @include flexProperty(space-between);
+            width: 96vw;
+            margin: 0 2vw;
+            height: 100%;
+
+           .text{
             width: 30%;
-            margin-right: 3vw;
-            text-align: right;
-            color: $navbg_color;
+
+            h5{
+               font-family: canopee;
+               font-weight: 10;
+               font-size: 1.5vw;
+               width: 10vw;
+               &.colorchange{
+                  color: $navlink_color;
+               }
+            }
+           }
+            .imgdiv{
+               width: 30%;
+               text-align: center;
+               img{
+                  width: 10vw;
+               }
+            } 
+            .hamburger{
+               width: 30%;
+               display: flex;
+               align-items: flex-end;
+               flex-direction: column;
+               
+               .linecontainer{
+                  cursor: pointer;
+                  .line{
+                     width: 2vw;
+                     height: .2vw;
+                     background-color: $font_back;
+                     margin-bottom: .2vw;
+                     transition: all ease .3s;
+
+                     &.linecolor{
+                        &:first-child{
+                           transform: rotate(45deg);
+                           background-color: $navlink_color;
+                        }
+                        &:last-child{
+                           transform: rotate(-45deg) translateY(20%);
+                           background-color: $navlink_color;
+                        }
+                     }
+                 }
+
+                 &:hover{
+                  .line:first-child{
+                     transform: translateX(.2vw);
+                  }
+                  .line:last-child{
+                     transform: translateX(-.2vw);
+                  }
+                 }
+               }
+           }
          }
       }
-   .page1{
+   #page{
       overflow: hidden;
       position: relative;
+      
    .header{
       height: 25vw;
       margin-top: 8vw;
@@ -160,6 +379,7 @@ html,body{
         p{
          font-family: editorial;
          font-weight: 100;
+         font-size: 1.5vw;
          span{
             font-family: canopee;
             font-weight: bolder;
@@ -746,6 +966,7 @@ html,body{
         p{
          font-family: editorial;
          font-weight: 100;
+         font-size: 1.5vw;
          span{
             font-family: canopee;
             font-weight: bolder;
@@ -853,6 +1074,22 @@ html,body{
    } 
 }
 }
+
+@media (max-width: 768px) {
+   #main{
+      .navlinks{
+         .links{
+            font-size: 50vw;
+         }
+      }
+
+      .navcontainer{
+         width: 20px;
+      }
+   }
+}
+
+
 
 
 
