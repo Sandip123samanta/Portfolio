@@ -3,28 +3,18 @@ const scroll = new LocomotiveScroll({
     smooth: true
 });
 
+const cursor = document.querySelector('.cursor');
+
 
 //preloader animation
 let currentvalue = 0;
 const logo = document.getElementById('#logo');
-function startloader(){
-    
-    function updatevalue(){
-        if(currentvalue === 100){
-            return;
-        }
+const isdesktop = window.matchMedia('(min-width: 769px)').matches;
 
-        currentvalue+= Math.floor(Math.random() * 10) + 1;
-
-        if(currentvalue > 100)
-            currentvalue = 100;
-    
-        let delay = Math.floor(Math.random() * 200) + 50;
-        setTimeout(updatevalue,delay);
-    }
-    updatevalue(); 
+if(!isdesktop){
+  cursor.setAttribute('style','display: none;')
 }
-startloader();
+
 window.addEventListener('load',()=>{
     gsap.to('#logo', 0.25, {
         delay: 3.5,

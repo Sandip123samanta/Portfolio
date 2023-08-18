@@ -920,4 +920,83 @@ body, html {
   border-radius: 50%;
   background-color: #1C1C19;
   margin: 0 0.5vw;
+}
+
+@media (max-width: 480px) {
+  .navcontainer {
+    height: 7vh !important;
+    position: relative !important;
+  }
+  .navcontainer .text h5 {
+    display: none;
+  }
+  .navcontainer .imgdiv {
+    transform: translateX(-120%);
+  }
+  .navcontainer .imgdiv img {
+    width: 15vh !important;
+  }
+  .navcontainer .hamburger .line {
+    width: 5vw !important;
+    height: 0.5vw !important;
+    margin-bottom: 1vw !important;
+  }
+  #Work #header {
+    display: block !important;
+    margin-top: 2vw !important;
+  }
+  #Work #header .hero_text {
+    margin-top: 0 !important;
+    width: 96vw !important;
+    border-right: 0 !important;
+  }
+  #Work #header .hero_text h4 {
+    font-size: 2vh !important;
+    margin-bottom: 2vw !important;
+  }
+  #Work #header .hero_text .featured h1 {
+    font-size: 32vw !important;
+    font-weight: 100;
+  }
+  #Work #header .hero_text .work h1 {
+    font-size: 15vh !important;
+    font-weight: 100;
+  }
+  #Work #header .hero_text p {
+    font-size: 5vw !important;
+  }
+  #Work #header .hero_text p span {
+    font-size: 8vw !important;
+  }
+  #Work #header .hero_text .btn {
+    display: none !important;
+  }
+  #Work #header .image_container {
+    width: 96vw !important;
+  }
+  #Work #Figma {
+    display: block !important;
+  }
+  #Work #Figma .first .design, #main #container #Work #Figma .second .design, #main #container #Work #Figma .third .design {
+    width: 50vw !important;
+    height: 80vw !important;
+  }
+  #Work #Figma .first .figma, #main #container #Work #Figma .second .figma, #main #container #Work #Figma .third .figma {
+    display: none !important;
+  }
+  #Work #Figma .first .web, #main #container #Work #Figma .second .web, #main #container #Work #Figma .third .web {
+    display: none !important;
+  }
+  #Work #web-projects .leftarrow, #main #container #Work #web-projects .rightarrow {
+    opacity: 1;
+  }
+  #Work #web-projects .rightarrow {
+    opacity: 1;
+  }
+  #Work #web-projects .project_container {
+    height: 90vw !important;
+  }
+  #Work #web-projects .project_container .project .container1 .text1 {
+    display: none !important;
+  }
 }/*# sourceMappingURL=Work.css.map */

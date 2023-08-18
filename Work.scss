@@ -1039,3 +1039,120 @@
      }
    }
 }
+
+@media (max-width: 480px){
+   .navcontainer{
+      height: 7vh !important;
+      position:  relative !important;
+
+      .text{
+         h5{
+            display: none;
+         }
+      }
+
+      .imgdiv{
+         transform: translateX(-120%);
+         img{
+            width: 15vh !important;
+         }
+      }
+
+      .hamburger{
+         .line{
+            width: 5vw !important;
+            height: .5vw !important;
+            margin-bottom: 1vw !important;
+         }
+      }
+   }
+
+   #Work{
+      #header {
+         display: block !important;
+         margin-top: 2vw !important;
+         .hero_text{
+            margin-top: 0 !important;
+            width: 96vw !important;
+            border-right: 0 !important;
+
+            h4{
+               font-size: 2vh !important;
+               margin-bottom: 2vw !important;
+            }
+            .featured{
+               h1{
+                  font-size: 32vw !important;
+                  font-weight: 100;
+               }
+            }
+
+            .work{
+               h1{
+                  font-size: 15vh !important;
+                  font-weight: 100;
+               }
+            }
+
+            p{
+               font-size: 5vw !important;
+               
+               span{
+                  font-size: 8vw !important;
+               }
+            }
+
+            .btn{
+              display: none !important;
+            }
+         }
+
+         .image_container{
+            width: 96vw !important;
+         }
+      }
+
+      #Figma{
+         display: block !important;
+         #empty{
+
+         }
+         .first{
+            .design{
+               width: 50vw !important;
+               height: 80vw !important;
+            }
+
+            .figma{
+               display: none !important;
+            }
+
+            .web{
+               display: none !important;
+            }
+         }
+      }
+
+      #web-projects{
+
+         .leftarrow{
+            opacity: 1;
+         }
+         .rightarrow{
+            opacity: 1;
+         }
+
+         .project_container{
+            height: 90vw !important;
+            .project{
+               
+               .container1{
+                  .text1{
+                     display: none !important;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

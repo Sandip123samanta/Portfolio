@@ -14,6 +14,12 @@ const navbar = document.querySelector('.navcontainer');
 const west = document.querySelector('.navcontainer nav .text h5');
 const lines = document.querySelectorAll('.line');
 
+//custom cursor
+const bigBall = document.querySelector('.cursor__ball--big');
+const smallBall = document.querySelector('.cursor__ball--small');
+const hoverables = document.querySelectorAll('.hoverables');
+const images = document.querySelectorAll('img');
+const cursor = document.querySelector('.cursor');
 
 //loader
 var tl = gsap.timeline()
@@ -46,26 +52,11 @@ else{
         scale: 1
     })
 
+    cursor.setAttribute('style','display: none;')
+
     let currentvalue = 0;
     const logo = document.getElementById('#logo');
-    function startloader(){
-    
-        function updatevalue(){
-            if(currentvalue === 100){
-                return;
-            }
 
-            currentvalue+= Math.floor(Math.random() * 10) + 1;
-
-            if(currentvalue > 100)
-                currentvalue = 100;
-    
-            let delay = Math.floor(Math.random() * 200) + 50;
-            setTimeout(updatevalue,delay);
-        }
-        updatevalue(); 
-    }
-    startloader();
     window.addEventListener('load',()=>{
     gsap.to('#logo', 0.25, {
         delay: 3.5,
@@ -90,13 +81,6 @@ text.innerHTML = text.innerHTML.split("").map(
 ).join("");
 
 
-
-
-//custom cursor
-const bigBall = document.querySelector('.cursor__ball--big');
-const smallBall = document.querySelector('.cursor__ball--small');
-const hoverables = document.querySelectorAll('.hoverables');
-const images = document.querySelectorAll('img');
 
 // Listeners
 document.body.addEventListener('mousemove', onMouseMove);
