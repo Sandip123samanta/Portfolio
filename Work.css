@@ -146,7 +146,7 @@ body, html {
   left: 0%;
   height: 100vh;
   width: 100vw;
-  z-index: 8;
+  z-index: 1;
   clip-path: circle(10vw at 50% -8%);
   -webkit-clip-path: circle(10vw at 50% -8%);
   transition: all 1s ease-out;
@@ -158,13 +158,13 @@ body, html {
   pointer-events: none;
 }
 #main #container .navlinks.open {
-  clip-path: circle(200vw at 50% -8%);
-  -webkit-clip-path: circle(200vw at 50% -8%);
+  clip-path: circle(200vw at 100% -8%);
+  -webkit-clip-path: circle(200vw at 100% -8%);
   pointer-events: all;
 }
 #main #container .navlinks .links {
-  font-size: 15vw;
-  line-height: 13.5vw;
+  font-size: max(15vw, 10vh);
+  line-height: max(13.5vw, 9vh);
   font-family: canopee;
   transition: 0.9s ease-in-out;
   opacity: 0;
@@ -188,7 +188,7 @@ body, html {
   text-decoration: none;
   color: #BEB5AB;
   font-family: canopee;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 2vh);
 }
 #main #container .navlinks span .circle {
   aspect-ratio: 1;
@@ -200,11 +200,13 @@ body, html {
 #main #container .navcontainer {
   position: fixed;
   width: 100vw;
-  height: 6vw;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 1px solid #76736D;
-  z-index: 9;
+  z-index: 2;
   top: 0;
   left: 0;
+  padding: 2vw 0;
   background-color: #BEB5AB;
   transition: 1.2s all ease-out;
 }
@@ -227,7 +229,6 @@ body, html {
   font-family: canopee;
   font-weight: 10;
   font-size: 1.5vw;
-  width: 10vw;
 }
 #main #container .navcontainer nav .text h5.colorchange {
   color: #BEB5AB;
@@ -237,7 +238,7 @@ body, html {
   text-align: center;
 }
 #main #container .navcontainer nav .imgdiv img {
-  width: 10vw;
+  width: max(10vw, 10vh);
 }
 #main #container .navcontainer nav .hamburger {
   width: 30%;
@@ -249,10 +250,10 @@ body, html {
   cursor: pointer;
 }
 #main #container .navcontainer nav .hamburger .linecontainer .line {
-  width: 2vw;
-  height: 0.2vw;
+  width: max(2vw, 2vh);
+  height: max(0.2vw, 0.2vh);
   background-color: #1C1C19;
-  margin-bottom: 0.2vw;
+  margin-bottom: max(0.2vw, 0.2vh);
   transition: all ease 0.3s;
 }
 #main #container .navcontainer nav .hamburger .linecontainer .line.linecolor:first-child {
@@ -565,8 +566,7 @@ body, html {
 }
 #main #container #Work #web-projects .project_container .project .container1 .video_container {
   width: 30vw;
-  height: 35vw;
-  border-radius: 50%;
+  height: 30vw;
   overflow: hidden;
 }
 #main #container #Work #web-projects .project_container .project .container1 .video_container video {
@@ -574,28 +574,6 @@ body, html {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  background-color: #BEB5AB;
-}
-#main #container #Work #web-projects .project_container .project .container1 .video_container .control {
-  position: absolute;
-  width: 7vw;
-  aspect-ratio: 1;
-  border: 1px solid #BEB5AB;
-  border-radius: 50%;
-  background-color: #1C1C19;
-  bottom: 5%;
-  left: 55%;
-}
-#main #container #Work #web-projects .project_container .project .container1 .video_container .control .play {
-  width: 0;
-  height: 0;
-  border-top: 1.5vw solid transparent;
-  border-left: 3vw solid #BEB5AB;
-  border-bottom: 1.5vw solid transparent;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-40%, -50%);
 }
 #main #container #Work #web-projects .project_container .project .container1 .text2 {
   display: flex;
@@ -765,7 +743,7 @@ body, html {
   width: 60%;
   height: 10vw;
   border-radius: 50%;
-  left: 20%;
+  left: 30%;
   margin-top: 5vw;
   display: flex;
   align-items: center;
@@ -774,7 +752,7 @@ body, html {
   overflow-x: hidden;
 }
 #main #container #Work #Blender .thdmodel .text_blender .btn:hover img {
-  transform: translate(50%);
+  transform: translate(60%);
 }
 #main #container #Work #Blender .thdmodel .text_blender .btn:hover h1 {
   transform: translate(175%);
@@ -886,20 +864,22 @@ body, html {
   align-items: center;
   margin: 0 2vw;
   width: 100%;
-  height: 6vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2vw 0;
 }
 #main #container #Work #footer h4 {
   font-family: canopee;
-  font-size: 2vw;
+  font-size: max(2vw, 2vh);
   font-weight: 100;
   display: flex;
 }
 #main #container #Work #footer h4 span {
   aspect-ratio: 1;
-  width: 1vw;
+  width: 2vw;
   border-radius: 100%;
   border: 1px solid #1C1C19;
-  font-size: 0.9vw;
+  font-size: 1vw;
   margin-left: 0.5vw;
 }
 #main #container #Work #footer span {
@@ -912,91 +892,235 @@ body, html {
   text-decoration: none;
   color: #1C1C19;
   font-family: canopee;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.5vh);
 }
 #main #container #Work #footer span .circle {
   aspect-ratio: 1;
-  width: 0.5vw;
+  width: max(0.5vw, 0.5vh);
   border-radius: 50%;
   background-color: #1C1C19;
   margin: 0 0.5vw;
 }
 
-@media screen and (max-width: 480px) {
-  .navcontainer {
-    height: 7vh !important;
-    position: relative !important;
-  }
-  .navcontainer .text h5 {
+@media screen and (max-width: 500px) {
+  #main #container .navcontainer .text {
     display: none;
   }
-  .navcontainer .imgdiv {
-    transform: translateX(-120%);
+  #main #container .navcontainer .hamburger {
+    margin-right: 2vw;
   }
-  .navcontainer .imgdiv img {
-    width: 15vh !important;
+  #main #container #Work #header {
+    flex-direction: column;
   }
-  .navcontainer .hamburger .line {
-    width: 5vw !important;
-    height: 0.5vw !important;
-    margin-bottom: 1vw !important;
+  #main #container #Work #header .hero_text {
+    width: 96%;
+    border: 0;
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 10vw;
   }
-  #Work #header {
-    flex-direction: column !important;
-    margin-top: 2vw !important;
+  #main #container #Work #header .hero_text h4 {
+    font-size: 5vw;
   }
-  #Work #header .hero_text {
-    margin-top: 0 !important;
-    width: 96vw !important;
-    border-right: 0 !important;
-  }
-  #Work #header .hero_text h4 {
-    font-size: 2vh !important;
-    margin-bottom: 2vw !important;
-  }
-  #Work #header .hero_text .featured h1 {
-    font-size: 32vw !important;
+  #main #container #Work #header .hero_text .featured h1 {
+    font-size: 30vw;
     font-weight: 100;
   }
-  #Work #header .hero_text .work h1 {
-    font-size: 15vh !important;
+  #main #container #Work #header .hero_text .work h1 {
+    font-size: 30vw;
+  }
+  #main #container #Work #header .hero_text p {
+    font-size: 7vw;
+  }
+  #main #container #Work #header .hero_text p span {
+    font-size: 10vw;
+  }
+  #main #container #Work #header .hero_text .btn {
+    width: 50vw;
+    height: 15vw;
+  }
+  #main #container #Work #header .hero_text .btn h1 {
+    font-size: 5vw;
+  }
+  #main #container #Work #header .image_container {
+    width: 96%;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  #main #container #Work #Figma {
+    flex-direction: column;
+    margin-bottom: 8vw;
+  }
+  #main #container #Work #Figma .first, #main #container #Work #Figma .second, #main #container #Work #Figma .third {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+  #main #container #Work #Figma .first .design, #main #container #Work #Figma .second .design, #main #container #Work #Figma .third .design {
+    width: 100%;
+    height: 125vw;
+    padding: 5vw;
+    margin-top: 5vw;
+  }
+  #main #container #Work #Figma .first .design h1, #main #container #Work #Figma .second .design h1, #main #container #Work #Figma .third .design h1 {
+    font-size: 5vw;
+  }
+  #main #container #Work #Figma .first .design .mockup, #main #container #Work #Figma .second .design .mockup, #main #container #Work #Figma .third .design .mockup {
+    width: 100%;
+    height: 80vw;
+  }
+  #main #container #Work #Figma .first .design p, #main #container #Work #Figma .second .design p, #main #container #Work #Figma .third .design p {
+    font-size: 4vw;
+  }
+  #main #container #Work #Figma .first .design p span, #main #container #Work #Figma .second .design p span, #main #container #Work #Figma .third .design p span {
+    font-size: 4vw;
+  }
+  #main #container #Work #Figma .first .design a .button, #main #container #Work #Figma .second .design a .button, #main #container #Work #Figma .third .design a .button {
+    width: 15vw;
+  }
+  #main #container #Work #Figma .first .design a .button .play, #main #container #Work #Figma .second .design a .button .play, #main #container #Work #Figma .third .design a .button .play {
+    border-top: 4vw solid transparent;
+    border-left: 8vw solid #1C1C19;
+    border-bottom: 4vw solid transparent;
+  }
+  #main #container #Work #Figma .first .figma, #main #container #Work #Figma .second .figma, #main #container #Work #Figma .third .figma {
+    font-size: 35vw;
+    color: #BEB5AB;
+    letter-spacing: 3vw;
+    background-color: #1C1C19;
+    padding-left: 2vw;
+  }
+  #main #container #Work #Figma .first .web, #main #container #Work #Figma .second .web, #main #container #Work #Figma .third .web {
+    display: none;
+  }
+  #main #container #Work #Figma .second .figma {
+    display: none;
+  }
+  #main #container #Work #Figma .second .web {
+    display: none;
+  }
+  #main #container #Work #Figma .third .figma {
+    display: none;
+  }
+  #main #container #Work #Figma .third .web {
+    display: none;
+  }
+  #main #container #Work #web-projects .project_container {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #main #container #Work #web-projects .project_container .project .container1 {
+    flex-direction: column-reverse;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  #main #container #Work #web-projects .project_container .project .container1 .text1 {
+    width: 100%;
+    margin-top: 2vw;
+  }
+  #main #container #Work #web-projects .project_container .project .container1 .text1 h1 {
+    font-size: 3vw;
+  }
+  #main #container #Work #web-projects .project_container .project .container1 .video_container {
+    width: 60vw;
+    height: 100%;
+  }
+  #main #container #Work #web-projects .project_container .project .container1 .text2 {
+    width: 100%;
+    justify-content: center;
+  }
+  #main #container #Work #web-projects .project_container .project .container1 .text2 h1 {
+    font-size: 6vw;
     font-weight: 100;
+    margin-bottom: 2vw;
   }
-  #Work #header .hero_text p {
-    font-size: 5vw !important;
+  #main #container #Work #web-projects .project_container .project .container1 .text2 h4 {
+    font-size: 3vw;
+    margin-bottom: 2vw;
   }
-  #Work #header .hero_text p span {
-    font-size: 8vw !important;
+  #main #container #Work #web-projects .project_container .project .container1 .text2 a .button h3 {
+    font-size: 4vw;
   }
-  #Work #header .hero_text .btn {
-    display: none !important;
+  #main #container #Work #web-projects .project_container .project .container1 .text2 a .button .arrow {
+    border-top: 0.5vw solid #1C1C19;
+    border-left: 0.5vw solid #1C1C19;
   }
-  #Work #header .image_container {
-    width: 96vw !important;
+  #main #container #Work #web-projects .project_container .project .container2 {
+    padding: 2vw;
   }
-  #Work #Figma {
-    display: block !important;
+  #main #container #Work #web-projects .project_container .project .container2 .moto h1 {
+    font-size: 3vw;
   }
-  #Work #Figma .first .design, #main #container #Work #Figma .second .design, #main #container #Work #Figma .third .design {
-    width: 50vw !important;
-    height: 80vw !important;
+  #main #container #Work #web-projects .project_container .project .container2 .moto .circle {
+    width: 1vw;
   }
-  #Work #Figma .first .figma, #main #container #Work #Figma .second .figma, #main #container #Work #Figma .third .figma {
-    display: none !important;
+  #main #container #Work #web-projects .project_container .project .container2 .social2 a {
+    font-size: 3vw;
   }
-  #Work #Figma .first .web, #main #container #Work #Figma .second .web, #main #container #Work #Figma .third .web {
-    display: none !important;
+  #main #container #Work #web-projects .project_container .project .container2 .social2 .circle {
+    width: 1vw;
   }
-  #Work #web-projects .leftarrow, #main #container #Work #web-projects .rightarrow {
-    opacity: 1;
+  #main #container #Work #Blender .models_text h1 {
+    background-color: #1C1C19;
+    color: #BEB5AB;
   }
-  #Work #web-projects .rightarrow {
-    opacity: 1;
+  #main #container #Work #Blender .thdmodel {
+    flex-direction: column;
+    margin-top: 5vw;
+    gap: 5vw;
   }
-  #Work #web-projects .project_container {
-    height: 90vw !important;
+  #main #container #Work #Blender .thdmodel .text_blender {
+    width: 100%;
   }
-  #Work #web-projects .project_container .project .container1 .text1 {
-    display: none !important;
+  #main #container #Work #Blender .thdmodel .text_blender h1 {
+    font-size: 15vw;
+  }
+  #main #container #Work #Blender .thdmodel .text_blender h2 {
+    font-size: 5vw;
+    margin-top: 2vw;
+  }
+  #main #container #Work #Blender .thdmodel .text_blender .uicontainer {
+    width: 100%;
+    height: 100%;
+  }
+  #main #container #Work #Blender .thdmodel .text_blender p {
+    font-size: 5vw;
+  }
+  #main #container #Work #Blender .thdmodel .text_blender p span {
+    font-size: 5vw;
+  }
+  #main #container #Work #Blender .thdmodel .text_blender .btn {
+    width: 40vw;
+    height: 15vw;
+  }
+  #main #container #Work #Blender .thdmodel .text_blender .btn h1 {
+    font-size: 5vw;
+  }
+  #main #container #Work #Blender .thdmodel .models {
+    width: 100%;
+  }
+  #main #container #Work #Blender .thdmodel .models .model .model_container {
+    width: 50%;
+    height: 50vw;
+  }
+  #main #container #Work #Blender .thdmodel .models .model .model_name {
+    width: 50%;
+    height: 50vw;
+  }
+  #main #container #Work #Blender .thdmodel .models .model .model_name h1 {
+    font-size: 6vw;
+  }
+  #main #container #Work #Blender .thdmodel .models .model .model_name p {
+    font-size: 4vw;
+  }
+  #main #container #Work #Blender .thdmodel .models .model .model_name h3 {
+    font-size: 6vw;
+  }
+  #main #container #Work #footer h4 span {
+    width: 3vw;
+    font-size: 1vh;
+  }
+  #main #container #Work #footer span {
+    transform: translateX(-10%);
   }
 }/*# sourceMappingURL=Work.css.map */
