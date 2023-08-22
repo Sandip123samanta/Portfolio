@@ -221,83 +221,83 @@
          .navcontainer{
             position: fixed;
             width: 100vw;
-            height: 6vw;
+            height: fit-content;
             border: 1px solid $line_color;
             z-index: 9;
             top: 0;
             left: 0;
+            padding: 2vw 0;
             background-color: $navlink_color;
             transition: 1.2s all ease-out;
-   
-            &.bg_color{
-               background-color:$font_back;
-               border: 0;
-            }
-   
-            nav{
-               @include flexProperty(space-between);
-               width: 96vw;
-               margin: 0 2vw;
-               height: 100%;
-   
-              .text{
-               width: 30%;
-   
-               h5{
-                  font-family: canopee;
-                  font-weight: 10;
-                  font-size: 1.5vw;
-                  width: 10vw;
-                  &.colorchange{
-                     color: $navlink_color;
-                  }
+
+         &.bg_color{
+            background-color:$font_back;
+            border: 0;
+         }
+
+         nav{
+            @include flexProperty(space-between);
+            width: 96vw;
+            margin: 0 2vw;
+            height: 100%;
+
+           .text{
+            width: 30%;
+
+            h5{
+               font-family: canopee;
+               font-weight: 10;
+               font-size: 1.5vw;
+               &.colorchange{
+                  color: $navlink_color;
                }
-              }
-               .imgdiv{
-                  width: 30%;
-                  text-align: center;
-                  img{
-                     width: 10vw;
-                  }
-               } 
-               .hamburger{
-                  width: 30%;
-                  display: flex;
-                  align-items: flex-end;
-                  flex-direction: column;
-                  
-                  .linecontainer{
-                     cursor: pointer;
-                     .line{
-                        width: 2vw;
-                        height: .2vw;
-                        background-color: $font_back;
-                        margin-bottom: .2vw;
-                        transition: all ease .3s;
-   
-                        &.linecolor{
-                           &:first-child{
-                              transform: rotate(45deg);
-                              background-color: $navlink_color;
-                           }
-                           &:last-child{
-                              transform: rotate(-45deg) translateY(20%);
-                              background-color: $navlink_color;
-                           }
-                        }
-                    }
-   
-                    &:hover{
-                     .line:first-child{
-                        transform: translateX(.2vw);
-                     }
-                     .line:last-child{
-                        transform: translateX(-.2vw);
-                     }
-                    }
-                  }
-              }
             }
+           }
+            .imgdiv{
+               width: 30%;
+               text-align: center;
+               img{
+                  width: max(10vw,10vh);
+               }
+            } 
+            .hamburger{
+               width: 30%;
+               display: flex;
+               align-items: flex-end;
+               flex-direction: column;
+               
+               .linecontainer{
+                  cursor: pointer;
+                  .line{
+                     width: max(2vw,2vh);
+                     height: max(.2vw,.2vh);
+                     background-color: $font_back;
+                     margin-bottom: max(.2vw,.2vh);
+                     transition: all ease .3s;
+
+                     &.linecolor{
+                        &:first-child{
+                           transform: rotate(45deg);
+                           background-color: $navlink_color;
+                        }
+                        &:last-child{
+                           transform: rotate(-45deg) translateY(20%);
+                           background-color: $navlink_color;
+                        }
+                     }
+                 }
+
+                 &:hover{
+                  .line:first-child{
+                     transform: translateX(.2vw);
+                  }
+                  .line:last-child{
+                     transform: translateX(-.2vw);
+                  }
+                 }
+               }
+           }
+         }
          }
 
         #About{
@@ -457,7 +457,6 @@
                         text-align: left;
                         padding: 0 2vw;
                         border-bottom: 1px solid $font_back;
-                        
 
                         .currentskill1{
                             @include flexProperty(space-between);
@@ -469,7 +468,7 @@
                             }
 
                             .c{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(6vw,6vw);
                                 transform: translateX(-9%);
                                 margin-top: 1vw;
@@ -477,19 +476,19 @@
     
                             .python{
                                 @include skillimageproparty(10vw,10vw);
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 transform: translateX(-2%);
                             }
     
                             .java{
                                 @include skillimageproparty(6vw,6vw);
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 transform: translateX(-2%);
                             }
                             
                             .javascript{
                                 @include skillimageproparty(6vw,6vw);
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 transform: translateX(-6%);
                             }
     
@@ -505,25 +504,25 @@
                             }
                             .TypeScript{
                                 @include skillimageproparty(8vw,8vw);
-                                 @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                              }
      
                             .HTML{
-                                 @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                  @include skillimageproparty(7vw,7vw);
                                 transform: translateX(-3%);
                                 margin-top: 1vw;
                              }
      
                             .CSS{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(6vw,6vw);
                                 transform: translateX(-6%);
                                 margin-top: 2vw;
                              }
      
                             .Gsap{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(7vw,7vw);
                             }
                         }
@@ -589,26 +588,26 @@
                             }
 
                             .node{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(10vw,6vw);
                                 transform: translateX(-6%);
 
                             }
 
                             .express{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(21vw,6vw);
                                 transform: translateX(1%);
                             }
 
                             .mongo{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(12vw,6vw);
                                 transform: translateX(-8%);
                             }
 
                             .next{
-                                @include textproparty;
+                                @include textproparty(1.3vw,2vw);
                                 @include skillimageproparty(15vw,6vw);
                             }
                         }
@@ -671,17 +670,17 @@
                         }
 
                         .xd{
-                            @include textproparty;
+                            @include textproparty(1.3vw,2vw);
                             @include skillimageproparty(7vw,6vw);
                             transform: translateX(2%);
                         }
                         .figma{
-                            @include textproparty;
+                            @include textproparty(1.3vw,2vw);
                             @include skillimageproparty(7vw,6vw);
                             transform: translateX(-10%);
                         }
                         .blender{
-                            @include textproparty;
+                            @include textproparty(1.3vw,2vw);
                             @include skillimageproparty(7vw,6vw);
                         }
             
@@ -822,10 +821,10 @@
             }
 
             #footer_work{
-                height: 25vw;
+                height: fit-content;
                 @include flexProperty(space-around);
                 border-top: 1px solid $font_back;
-                margin: 2vw 2vw 2vw;
+                margin: 0 2vw 2vw;
                 padding-top: 2vw;
              
                 .work_one{
@@ -854,6 +853,8 @@
                       margin-top: 1vw;
                       font-family: canopee;
                       margin-bottom: 1vw;
+                      font-weight: 100;
+          
                       span{
                          padding: 2px;
                          border-radius: 2px;
@@ -866,8 +867,7 @@
           
                    p{
                       font-size: 1.3vw;
-                      font-family: editorial;
-          
+                      font-family: editorial;         
                    }
                 }
                 .work_All{
@@ -876,7 +876,6 @@
                   border-left: 1px solid $line_color;
                   border-right: 1px solid $line_color; 
                   text-align: center;
-                  padding: 0 1vw;
           
                   h1{
                    font-family: canopee;
@@ -896,7 +895,6 @@
                    font-family: editorial;
                    font-weight: 100;
                    font-size: 1.5vw;
-
                    span{
                       font-family: canopee;
                       font-weight: bolder;
@@ -961,20 +959,21 @@
                 align-items: center;
                 margin: 0 2vw;
                 width: 100%;
-                height: 6vw;
+                height: fit-content;
+                padding: 2vw 0;
           
                 h4{
                    font-family: canopee;
-                   font-size: 2vw;
+                   font-size: max(2vw,2vh);
                    font-weight: 100;
                    display: flex;
           
                    span{
                       aspect-ratio: 1;
-                      width: 1vw;
+                      width: 2vw;
                       border-radius: 100%;
                       border: 1px solid $font_back;
-                      font-size: .9vw;
+                      font-size: 1vw;
                       margin-left: .5vw;
                    }
                 }
@@ -989,12 +988,12 @@
                       text-decoration: none;
                       color: $font_back;
                       font-family: canopee;
-                      font-size: 1.5vw;
+                      font-size: max(1.5vw,1.5vh);
                    }
           
                    .circle{
                       aspect-ratio: 1;
-                      width: .5vw;
+                      width: max(.5vw,.5vh);
                       border-radius: 50%;
                       background-color: $font_back;
                       margin: 0 .5vw;
@@ -1004,3 +1003,325 @@
         }
     }
 }
+
+@media  screen and (max-width: 500px) {
+    #main{
+       #container{
+          .navcontainer{
+            .text{
+                display: none;
+            }
+ 
+            .hamburger{
+                margin-right: 2vw;
+             }
+          }
+ 
+          #About{
+            .about_text{
+                margin-top: 6vh;
+            }
+            
+            .skills{
+                flex-direction: column;
+
+                .myImage{
+                    border: 0;
+                    width: 100%;
+
+                    .myimage{
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    h1{
+                        font-size: 19.5vw;
+                        line-height: 20vw;
+
+                        #me{
+                            font-size: 20vw;
+                        }
+                    }
+
+                    #a{
+                        font-size: 5vh;
+                    }
+
+                    h4{
+                        font-size: 4vh;
+                        line-height: 4vh;
+                    }
+
+                    p{
+                        font-size: 4vh;
+                        line-height: 4vh;
+                    }
+                }
+
+                .skill{
+                    margin-top: 5vw;
+                    padding: 0;
+
+                    .currentskill{
+                        .skill_name{
+                            h1{
+                                font-size: 4vh;
+                            }
+
+                            .circle{
+                                width: 3vh;
+                                height: 3vh;
+                            }
+                        }
+
+                        .currentskill_container{
+                            flex-direction: column;
+                            align-items: flex-start;
+
+                            .currentskill1{
+                                gap: 2vh;
+                                .c{
+                                    @include skillimageproparty(6vh,6vh);
+                                    @include textproparty(2vh,2vh);
+                                    transform: translateX(-20%);
+                                }
+
+                                .python{
+                                    transform: translateX(2%);
+                                    @include skillimageproparty(10vh,10vh);
+                                    @include textproparty(2vh,2vh);
+                                }
+
+                                .java{
+                                    @include skillimageproparty(6vh,6vh);
+                                    @include textproparty(2vh,2vh);
+                                    transform: translateX(-5%);
+                                }
+
+                                .javascript{
+                                    @include skillimageproparty(6vh,6vh);
+                                @include textproparty(2vh,2vh);
+                                transform: translateX(-14%);
+                                }
+                            }
+
+                            .currentskill2{
+                                gap: 2vh;
+                                .TypeScript{
+                                    @include skillimageproparty(8vh,8vh);
+                                    @include textproparty(2vh,2vh);
+                                    transform: translateX(5%);
+                                }
+
+                                .HTML{
+                                    @include textproparty(2vh,2vh);
+                                     @include skillimageproparty(7vh,7vh);
+                                    transform: translateX(0);
+                                }
+
+                                .CSS{
+                                    @include textproparty(2vh,2vh);
+                                    @include skillimageproparty(6vh,6vh);
+                                    transform: translateX(-9%);
+                                 }
+         
+                                .Gsap{
+                                    @include textproparty(2vh,2vh);
+                                    @include skillimageproparty(7vh,7vh);
+                                    transform: translateX(7%);
+                                }
+                            }
+                        }
+                    }
+
+                    .working_on{
+                        .workingskill_name{
+                            .circle{
+                                height: 3vh;
+                                width: 3vh;
+                            }
+
+                            h1{
+                                font-size: 4vh;
+                            }
+                        }
+
+                        .workingskill_container{
+                      
+                            .workingonskill{
+                                gap: 2vh;
+                                .node{
+                                    @include textproparty(2vh,2vh);
+                                    @include skillimageproparty(13vh,6vh);
+                                    transform: translateX(0);
+    
+                                }
+    
+                                .express{
+                                    @include textproparty(2vh,2vh);
+                                    @include skillimageproparty(23vh,6vh);
+                                    transform: translateX(2%);
+                                }
+    
+                                .mongo{
+                                    @include textproparty(2vh,2vh);
+                                    @include skillimageproparty(12vh,6vh);
+                                    transform: translateX(0%);
+                                }
+    
+                                .next{
+                                    @include textproparty(2vh,2vh);
+                                    @include skillimageproparty(18vh,6vh);
+                                }
+                            }
+                        }
+
+
+                    }
+
+                    .softskill{
+                        .softskill_name{
+                            .circle{
+                                width: 3vh;
+                                height: 3vh;
+                            }
+
+                            h1{
+                                font-size: 4vh;
+                            }
+                        }
+
+                        .soft_container{
+                            gap: 2vh;
+
+                            .xd{
+                                @include textproparty(2vh,2vh);
+                                @include skillimageproparty(12vh,6vh);
+                                transform: translateX(2%);
+                            }
+                            .figma{
+                                @include textproparty(2vh,2vh);
+                                @include skillimageproparty(7vh,6vh);
+                                transform: translateX(2%);
+                            }
+                            .blender{
+                                @include textproparty(2vh,2vw);
+                                @include skillimageproparty(13vh,6vh);
+                                transform: translateX(-2%);
+                            }
+                
+                        }
+                    }
+                }
+            }
+            .workexperience{
+                margin-top: 3vh;
+                h3{
+                    font-size: 3vh;
+                }
+                
+                .workcards{
+                    flex-direction: column;
+                    gap: 2vw;
+                    margin-top: 2vh;
+
+                    .opportunity{
+                        width: 96vw;
+                        height: 60vw;
+
+                        .contain{
+                            width: 90vw;
+                            height: 95%;
+
+                            h1{
+                                font-size: 4vh;
+                                line-height: 4vh;
+                                margin-bottom: 1vh;
+                            }
+
+                            p{
+                                font-size: 2vh;
+                                margin-top: 2vh;
+                            }
+
+                            h4{
+                                font-size: 2vh;
+                                margin-top: 2vh;
+                            }
+                        }
+                    }
+
+                    .work{
+                        h4{
+                            font-size: 3vh;
+                        }
+                    }
+                }
+            }
+
+            .clientwork{
+                h1{
+                    font-size: 5vh;
+                    line-height: 5vh;
+
+                    span{
+                        font-size: 5vh;
+                    }
+                }
+            }
+
+            .clientImage{
+
+                .image1{
+                    width: 96vw;
+                    height: 96vw;
+                    margin-bottom: 2vh;
+                }
+
+                .image2{
+                    display: none;
+                }
+            }
+
+            #footer_work{
+               .work_one{
+                h4{
+                   font-size: 1.5vh;
+ 
+                   span{
+                      font-size: 1.2vh;
+                   }
+                }
+ 
+                p{
+                   font-size: .8vh;
+                }
+               }
+ 
+               .work_All{
+                   h3{
+                      font-size: 1.5vh;
+                   }
+ 
+                   p{
+                      font-size: 1.2vh;
+                   }
+               }
+            }
+ 
+            #footer{
+                h4{
+                   span{
+                      width: 3vw;
+                      font-size: 1vh;
+                   }
+                }
+ 
+                span{
+                   transform: translateX(-10%);
+                }
+            }
+          }
+       }
+    }
+ }

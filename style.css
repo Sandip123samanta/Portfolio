@@ -198,11 +198,13 @@ html, body {
 #main .pagecontainer .navcontainer {
   position: fixed;
   width: 100vw;
-  height: max(6vw, 5vh);
+  height: -moz-fit-content;
+  height: fit-content;
   border: 1px solid #76736D;
   z-index: 2;
   top: 0;
   left: 0;
+  padding: 2vw 0;
   background-color: #BEB5AB;
   transition: 1.2s all ease-out;
 }
@@ -224,8 +226,7 @@ html, body {
 #main .pagecontainer .navcontainer nav .text h5 {
   font-family: canopee;
   font-weight: 10;
-  font-size: max(1.5vw, 1.2vh);
-  width: 10vw;
+  font-size: 1.5vw;
 }
 #main .pagecontainer .navcontainer nav .text h5.colorchange {
   color: #BEB5AB;
@@ -274,7 +275,7 @@ html, body {
 #main .pagecontainer #page .header {
   height: -moz-fit-content;
   height: fit-content;
-  margin-top: max(8vw, 6vh);
+  margin-top: 8vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -300,7 +301,7 @@ html, body {
   scale: 1.1;
 }
 #main .pagecontainer #page .header .work1 h4, #main .pagecontainer #page .header .work2 h4 {
-  font-size: max(1.5vw, 1.5vh);
+  font-size: 1.5vw;
   margin-top: 1vw;
   font-family: canopee;
   font-weight: 100;
@@ -309,13 +310,13 @@ html, body {
 #main .pagecontainer #page .header .work1 h4 span, #main .pagecontainer #page .header .work2 h4 span {
   padding: 2px;
   border-radius: 2px;
-  font-size: max(1.2vw, 1.2vh);
+  font-size: 1.2vw;
   font-weight: 100;
   color: white;
   background-color: #B93C12;
 }
 #main .pagecontainer #page .header .work1 p, #main .pagecontainer #page .header .work2 p {
-  font-size: max(1.3vw, 0.8vh);
+  font-size: 1.3vw;
   font-family: editorial;
 }
 #main .pagecontainer #page .header .workAll {
@@ -334,13 +335,13 @@ html, body {
 #main .pagecontainer #page .header .workAll h3 {
   font-family: editorial;
   font-weight: 20;
-  font-size: max(2.5vw, 1.5vh);
+  font-size: 2.5vw;
   margin-bottom: 2vw;
 }
 #main .pagecontainer #page .header .workAll p {
   font-family: editorial;
   font-weight: 100;
-  font-size: max(1.5vw, 1.2vh);
+  font-size: 1.5vw;
 }
 #main .pagecontainer #page .header .workAll p span {
   font-family: canopee;
@@ -401,7 +402,7 @@ html, body {
   margin-top: 2vw;
 }
 #main .pagecontainer #page .info .info1 .info1-text2 span {
-  font-size: max(6vw, 5vh);
+  font-size: 6vw;
   color: #BEB5AB;
   background-color: #1D1D1B;
   font-family: canopee;
@@ -414,9 +415,9 @@ html, body {
   margin-right: 0.5vw;
 }
 #main .pagecontainer #page .info .info1 .info1-text2 p {
-  font-size: max(3vw, 3vh);
+  font-size: 3vw;
   font-family: editorial;
-  line-height: max(3vw, 3vh);
+  line-height: 3vw;
   margin: 0 2vw 0 2vw;
 }
 #main .pagecontainer #page .info .info2 {
@@ -527,7 +528,7 @@ html, body {
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h1 {
   text-align: left;
-  font-size: max(4vw, 3vh);
+  font-size: 4vw;
   font-family: canopee;
   font-weight: 100;
   letter-spacing: 0.02vw;
@@ -537,14 +538,14 @@ html, body {
   text-align: left;
   font-family: editorial;
   font-weight: 90;
-  font-size: max(2.5vw, 2vh);
+  font-size: 2.5vw;
   color: #1D1D1B;
-  line-height: max(3vw, 2.5vh);
+  line-height: 3vw, 2.5vh;
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 {
   font-family: editorial;
   font-weight: 200;
-  font-size: max(2vw, 2vh);
+  font-size: 2vw;
   margin-top: 2vw;
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 span {
@@ -572,12 +573,12 @@ html, body {
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second h3 {
   font-family: canopee;
   font-weight: 200;
-  font-size: max(4vw, 3vh);
+  font-size: 4vw;
   margin-bottom: 0.5vw;
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second p {
   font-family: editorial;
-  font-size: max(1.5vw, 1.2vh);
+  font-size: 1.5vw;
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming_image img {
   width: 60vw;
@@ -596,20 +597,20 @@ html, body {
   margin-bottom: 5vw;
 }
 #main .pagecontainer #page #All_work .deliver h1 span {
-  font-size: max(13.5vw, 13vh);
+  font-size: 13.5vw;
   font-weight: 500;
   background-color: #1C1C19;
   color: #BEB5AB;
 }
 #main .pagecontainer #page #All_work .deliver .first_part {
   font-family: editorial;
-  font-size: max(2vw, 2vh);
+  font-size: 2vw;
   font-weight: 90;
   color: #1C1C19;
   margin-left: 1vw;
 }
 #main .pagecontainer #page #All_work .deliver .first_part .A {
-  font-size: max(5vw, 5vh);
+  font-size: 5vw;
   background-color: #1C1C19;
   color: #BEB5AB;
   font-family: canopee;
@@ -620,7 +621,7 @@ html, body {
 }
 #main .pagecontainer #page #All_work .deliver .second_part {
   font-family: editorial;
-  font-size: max(2vw, 2vh);
+  font-size: 2vw;
   font-weight: 90;
   color: #1C1C19;
   margin: 2vw 0 0 1vw;
@@ -823,7 +824,7 @@ html, body {
   scale: 1.1;
 }
 #main .pagecontainer #page #footer_work .work_one h4, #main .pagecontainer #page #footer_work .work_two h4 {
-  font-size: max(1.5vw, 1.5vh);
+  font-size: 1.5vw;
   margin-top: 1vw;
   font-family: canopee;
   margin-bottom: 1vw;
@@ -832,13 +833,13 @@ html, body {
 #main .pagecontainer #page #footer_work .work_one h4 span, #main .pagecontainer #page #footer_work .work_two h4 span {
   padding: 2px;
   border-radius: 2px;
-  font-size: max(1.2vw, 1.2vh);
+  font-size: 1.2vw;
   font-weight: 100;
   color: white;
   background-color: #B93C12;
 }
 #main .pagecontainer #page #footer_work .work_one p, #main .pagecontainer #page #footer_work .work_two p {
-  font-size: max(1.3vw, 0.8vh);
+  font-size: 1.3vw;
   font-family: editorial;
 }
 #main .pagecontainer #page #footer_work .work_All {
@@ -857,13 +858,13 @@ html, body {
 #main .pagecontainer #page #footer_work .work_All h3 {
   font-family: editorial;
   font-weight: 20;
-  font-size: max(2.5vw, 1.5vh);
+  font-size: 2.5vw;
   margin-bottom: 2vw;
 }
 #main .pagecontainer #page #footer_work .work_All p {
   font-family: editorial;
   font-weight: 100;
-  font-size: max(1.5vw, 1.2vh);
+  font-size: 1.5vw;
 }
 #main .pagecontainer #page #footer_work .work_All p span {
   font-family: canopee;
@@ -918,7 +919,9 @@ html, body {
   align-items: center;
   margin: 0 2vw;
   width: 100%;
-  height: max(6vw, 5vh);
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2vw 0;
 }
 #main .pagecontainer #page #footer h4 {
   font-family: canopee;
@@ -954,18 +957,30 @@ html, body {
   margin: 0 0.5vw;
 }
 
-@media screen and (max-width: 769px) {
-  .loader {
-    display: none;
-    pointer-events: none;
-  }
-}
 @media screen and (max-width: 500px) {
   #main .pagecontainer .navcontainer .text {
     display: none;
   }
   #main .pagecontainer .navcontainer .hamburger {
     margin-right: 2vw;
+  }
+  #main .pagecontainer #page .header {
+    margin-top: 6vh;
+  }
+  #main .pagecontainer #page .header .work1 h4, #main .pagecontainer #page .header .work2 h4 {
+    font-size: 1.5vh;
+  }
+  #main .pagecontainer #page .header .work1 h4 span, #main .pagecontainer #page .header .work2 h4 span {
+    font-size: 1.2vh;
+  }
+  #main .pagecontainer #page .header .work1 p, #main .pagecontainer #page .header .work2 p {
+    font-size: 0.8vh;
+  }
+  #main .pagecontainer #page .header .workAll h3 {
+    font-size: 1.5vh;
+  }
+  #main .pagecontainer #page .header .workAll p {
+    font-size: 1.2vh;
   }
   #main .pagecontainer #page .info {
     padding: 0;
@@ -989,6 +1004,13 @@ html, body {
   #main .pagecontainer #page .info .info1 .info1-image img {
     width: 100%;
     height: 20%;
+  }
+  #main .pagecontainer #page .info .info1 .info1-text2 span {
+    font-size: 5vh;
+  }
+  #main .pagecontainer #page .info .info1 .info1-text2 p {
+    font-size: 3vh;
+    line-height: 3vh;
   }
   #main .pagecontainer #page .info .info2 .info2-image img {
     width: 96vw;
@@ -1014,6 +1036,16 @@ html, body {
     width: 50%;
     border: 0;
   }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h1 {
+    font-size: 3vh;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h3 {
+    font-size: 2vh;
+    line-height: 2.5vh;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 {
+    font-size: 2vh;
+  }
   #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second {
     width: 50%;
     padding-left: 2vw;
@@ -1022,6 +1054,12 @@ html, body {
   #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer {
     width: 95%;
     height: 100%;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second h3 {
+    font-size: 3vh;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second p {
+    font-size: 1.2vh;
   }
   #main .pagecontainer #page #All_work .upcoming_container .upcoming_image {
     margin-right: 1vw;
@@ -1035,6 +1073,18 @@ html, body {
   #main .pagecontainer #page #All_work .deliver h1 {
     font-size: 8.5vh;
   }
+  #main .pagecontainer #page #All_work .deliver h1 span {
+    font-size: 13vh;
+  }
+  #main .pagecontainer #page #All_work .deliver .first_part {
+    font-size: 2vh;
+  }
+  #main .pagecontainer #page #All_work .deliver .first_part .A {
+    font-size: 5vh;
+  }
+  #main .pagecontainer #page #All_work .deliver .second_part {
+    font-size: 2vh;
+  }
   #main .pagecontainer #page #All_work .deliver .btn {
     width: 50%;
     height: 15vw;
@@ -1044,6 +1094,21 @@ html, body {
   }
   #main .pagecontainer #page #hero_container .hero_three .text p {
     font-size: 2vw;
+  }
+  #main .pagecontainer #page #footer_work .work_one h4, #main .pagecontainer #page #footer_work .work_two h4 {
+    font-size: 1.5vh;
+  }
+  #main .pagecontainer #page #footer_work .work_one h4 span, #main .pagecontainer #page #footer_work .work_two h4 span {
+    font-size: 1.2vh;
+  }
+  #main .pagecontainer #page #footer_work .work_one p, #main .pagecontainer #page #footer_work .work_two p {
+    font-size: 0.8vh;
+  }
+  #main .pagecontainer #page #footer_work .work_All h3 {
+    font-size: 1.5vh;
+  }
+  #main .pagecontainer #page #footer_work .work_All p {
+    font-size: 1.2vh;
   }
   #main .pagecontainer #page #footer h4 span {
     width: 3vw;

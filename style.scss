@@ -226,11 +226,12 @@ html,body{
       .navcontainer{
          position: fixed;
          width: 100vw;
-         height: max(6vw,5vh);
+         height: fit-content;
          border: 1px solid $line_color;
          z-index: 2;
          top: 0;
          left: 0;
+         padding: 2vw 0;
          background-color: $navlink_color;
          transition: 1.2s all ease-out;
 
@@ -251,8 +252,7 @@ html,body{
             h5{
                font-family: canopee;
                font-weight: 10;
-               font-size: max(1.5vw,1.2vh);
-               width: 10vw;
+               font-size: 1.5vw;
                &.colorchange{
                   color: $navlink_color;
                }
@@ -310,7 +310,7 @@ html,body{
       
    .header{
       height: fit-content;
-      margin-top: max(8vw,6vh);
+      margin-top: 8vw;
       @include flexProperty(space-around);
    
       .work1{
@@ -335,7 +335,7 @@ html,body{
          }
 
          h4{
-            font-size: max(1.5vw,1.5vh);
+            font-size: 1.5vw;
             margin-top: 1vw;
             font-family: canopee;
             font-weight: 100;
@@ -343,7 +343,7 @@ html,body{
             span{
                padding: 2px;
                border-radius: 2px;
-               font-size: max(1.2vw,1.2vh);
+               font-size: 1.2vw;
                font-weight: 100;
                color: white;
                background-color: $new_color;
@@ -351,7 +351,7 @@ html,body{
          }
 
          p{
-            font-size: max(1.3vw,.8vh);
+            font-size: 1.3vw;
             font-family: editorial;
 
          }
@@ -373,14 +373,14 @@ html,body{
         h3{
          font-family:editorial;
          font-weight: 20;
-         font-size: max(2.5vw,1.5vh);
+         font-size: 2.5vw;
          margin-bottom: 2vw;
         }
 
         p{
          font-family: editorial;
          font-weight: 100;
-         font-size: max(1.5vw,1.2vh);
+         font-size: 1.5vw;
          span{
             font-family: canopee;
             font-weight: bolder;
@@ -447,7 +447,7 @@ html,body{
          .info1-text2{
            margin-top: 2vw;
             span{
-               font-size: max(6vw,5vh);
+               font-size: 6vw;
                color: $navlink_color;
                background-color: $navbg_color;
                font-family: canopee;
@@ -459,9 +459,9 @@ html,body{
                margin-right: .5vw;
             }
             p{
-               font-size: max(3vw,3vh);
+               font-size: 3vw;
               font-family: editorial;
-              line-height: max(3vw,3vh);
+              line-height: 3vw;
               margin: 0 2vw 0 2vw;
             }
          }
@@ -576,7 +576,7 @@ html,body{
                border-right: 1px solid $font_back;
                h1{
                  text-align: left;
-                 font-size: max(4vw,3vh);
+                 font-size: 4vw;
                  font-family: canopee; 
                  font-weight: 100;
                  letter-spacing: .02vw;
@@ -587,15 +587,15 @@ html,body{
                   text-align: left;
                   font-family: editorial;
                   font-weight: 90;
-                  font-size: max(2.5vw,2vh);
+                  font-size: 2.5vw;
                   color: $navbg_color;
-                  line-height: max(3vw,2.5vh);
+                  line-height: 3vw,2.5vh;
                }
 
                h4{
                   font-family: editorial;
                   font-weight: 200;
-                  font-size: max(2vw,2vh);
+                  font-size: 2vw;
                   margin-top: 2vw;
 
                   span{
@@ -627,12 +627,12 @@ html,body{
                h3{
                   font-family: canopee;
                   font-weight: 200;
-                  font-size: max(4vw,3vh);
+                  font-size: 4vw;
                   margin-bottom: .5vw;
                }
                p{
                   font-family: editorial;
-                  font-size: max(1.5vw,1.2vh);
+                  font-size: 1.5vw;
                }
             }
          }
@@ -656,7 +656,7 @@ html,body{
             margin-bottom: 5vw;
 
             span{
-               font-size: max(13.5vw,13vh);
+               font-size: 13.5vw;
                font-weight: 500;
                background-color: $font_back;
                color: $navlink_color;
@@ -665,13 +665,13 @@ html,body{
 
          .first_part{
             font-family: editorial;
-            font-size: max(2vw,2vh);
+            font-size: 2vw;
             font-weight: 90;
             color: $font_back;
             margin-left: 1vw;
 
             .A{
-               font-size: max(5vw,5vh);
+               font-size: 5vw;
                background-color: $font_back;
                color: $navlink_color;
                font-family: canopee;
@@ -684,7 +684,7 @@ html,body{
 
          .second_part{
             font-family: editorial;
-            font-size: max(2vw,2vh);
+            font-size: 2vw;
             font-weight: 90;
             color: $font_back;
             margin:2vw 0 0 1vw;
@@ -879,7 +879,7 @@ html,body{
          .text{
             p{
                font-family: editorial;
-               font-size: max(1.5vw);
+               font-size: 1.5vw;
                font-weight: 100;
             }
    
@@ -922,7 +922,7 @@ html,body{
          }
 
          h4{
-            font-size: max(1.5vw,1.5vh);
+            font-size: 1.5vw;
             margin-top: 1vw;
             font-family: canopee;
             margin-bottom: 1vw;
@@ -931,7 +931,7 @@ html,body{
             span{
                padding: 2px;
                border-radius: 2px;
-               font-size: max(1.2vw,1.2vh);
+               font-size: 1.2vw;
                font-weight: 100;
                color: white;
                background-color: $new_color;
@@ -939,9 +939,8 @@ html,body{
          }
 
          p{
-            font-size: max(1.3vw,.8vh);
-            font-family: editorial;
-
+            font-size: 1.3vw;
+            font-family: editorial;         
          }
       }
       .work_All{
@@ -961,14 +960,14 @@ html,body{
         h3{
          font-family:editorial;
          font-weight: 20;
-         font-size: max(2.5vw,1.5vh);
+         font-size: 2.5vw;
          margin-bottom: 2vw;
         }
 
         p{
          font-family: editorial;
          font-weight: 100;
-         font-size: max(1.5vw,1.2vh);
+         font-size: 1.5vw;
          span{
             font-family: canopee;
             font-weight: bolder;
@@ -1033,7 +1032,8 @@ html,body{
       align-items: center;
       margin: 0 2vw;
       width: 100%;
-      height: max(6vw,5vh);
+      height: fit-content;
+      padding: 2vw 0;
 
       h4{
          font-family: canopee;
@@ -1078,14 +1078,6 @@ html,body{
 }
 
 
-@media screen and (max-width: 769px) {
-   .loader{
-      display: none;
-      pointer-events: none;
-   }
-}
-
-
 @media  screen and (max-width: 500px) {
    #main{
       .pagecontainer{
@@ -1100,6 +1092,33 @@ html,body{
          }
 
          #page{
+
+            .header{
+               margin-top: 6vh;
+
+               .work1{
+                  h4{
+                     font-size: 1.5vh;
+                     span{
+                        font-size: 1.2vh;
+                     }
+                  }
+
+                  p{
+                     font-size: .8vh;
+                  }
+               }
+
+               .workAll{
+                  h3{
+                     font-size: 1.5vh;
+                  }
+
+                  p{
+                     font-size: 1.2vh;
+                  }
+               }
+            }
            .info{
                padding: 0;
                flex-direction: column-reverse;
@@ -1125,6 +1144,17 @@ html,body{
                      img{
                         width: 100%;
                         height: 20%;
+                     }
+                  }
+
+                  .info1-text2{
+                     span{
+                        font-size: 5vh;
+                     }
+
+                     p{
+                        font-size: 3vh;
+                        line-height: 3vh;
                      }
                   }
                }
@@ -1161,6 +1191,19 @@ html,body{
                      .upcoming_first{
                         width: 50%;
                         border: 0;
+
+                        h1{
+                           font-size: 3vh;
+                        }
+
+                        h3{
+                           font-size: 2vh;
+                           line-height: 2.5vh;
+                        }
+
+                        h4{
+                           font-size: 2vh;
+                        }
                      }
                      .upcoming_second{
                         width: 50%;
@@ -1170,6 +1213,14 @@ html,body{
                         .imagecontainer{
                            width: 95%;
                            height: 100%;
+                        }
+
+                        h3{
+                           font-size: 3vh;
+                        }
+
+                        p{
+                           font-size: 1.2vh;
                         }
                      }
                   }
@@ -1188,7 +1239,24 @@ html,body{
 
                   h1{
                      font-size: 8.5vh;
+
+                     span{
+                        font-size: 13vh;
+                     }
                   }
+
+                  .first_part{
+                     font-size: 2vh;
+
+                     .A{
+                        font-size: 5vh;
+                     }
+                  }
+
+                  .second_part{
+                     font-size: 2vh;
+                  }
+
                   .btn{
                      width: 50%;
                      height: 15vw;
@@ -1208,6 +1276,32 @@ html,body{
                      }
                   }
                }
+           }
+
+           #footer_work{
+              .work_one{
+               h4{
+                  font-size: 1.5vh;
+
+                  span{
+                     font-size: 1.2vh;
+                  }
+               }
+
+               p{
+                  font-size: .8vh;
+               }
+              }
+
+              .work_All{
+                  h3{
+                     font-size: 1.5vh;
+                  }
+
+                  p{
+                     font-size: 1.2vh;
+                  }
+              }
            }
 
            #footer{

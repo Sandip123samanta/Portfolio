@@ -12,17 +12,17 @@
     bottom: 0%;
 }
 
-@mixin textproparty{
+@mixin textproparty($para,$htag){
     .text{
         font-family: editorial;
         margin-left: 1vw;
         p{
-            font-size: 1.3vw;
+            font-size: $para;
             font-weight: 200;
         }
 
         h1{
-            font-size: 2vw;
+            font-size: $htag;
             font-weight: 900;
         }
     }

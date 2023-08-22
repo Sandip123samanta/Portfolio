@@ -11,8 +11,8 @@ let currentvalue = 0;
 const logo = document.getElementById('#logo');
 const isdesktop = window.matchMedia('(min-width: 769px)').matches;
 
-if(!isdesktop){
-  cursor.setAttribute('style','display: none;')
+if ('ontouchstart' in window || navigator.maxTouchPoints) {
+  cursor.setAttribute('style','display: none;');
 }
 
 window.addEventListener('load',()=>{

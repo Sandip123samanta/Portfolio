@@ -200,11 +200,13 @@ body, html {
 #main #container .navcontainer {
   position: fixed;
   width: 100vw;
-  height: 6vw;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 1px solid #76736D;
   z-index: 9;
   top: 0;
   left: 0;
+  padding: 2vw 0;
   background-color: #BEB5AB;
   transition: 1.2s all ease-out;
 }
@@ -227,7 +229,6 @@ body, html {
   font-family: canopee;
   font-weight: 10;
   font-size: 1.5vw;
-  width: 10vw;
 }
 #main #container .navcontainer nav .text h5.colorchange {
   color: #BEB5AB;
@@ -237,7 +238,7 @@ body, html {
   text-align: center;
 }
 #main #container .navcontainer nav .imgdiv img {
-  width: 10vw;
+  width: max(10vw, 10vh);
 }
 #main #container .navcontainer nav .hamburger {
   width: 30%;
@@ -249,10 +250,10 @@ body, html {
   cursor: pointer;
 }
 #main #container .navcontainer nav .hamburger .linecontainer .line {
-  width: 2vw;
-  height: 0.2vw;
+  width: max(2vw, 2vh);
+  height: max(0.2vw, 0.2vh);
   background-color: #1C1C19;
-  margin-bottom: 0.2vw;
+  margin-bottom: max(0.2vw, 0.2vh);
   transition: all ease 0.3s;
 }
 #main #container .navcontainer nav .hamburger .linecontainer .line.linecolor:first-child {
@@ -1056,12 +1057,13 @@ body, html {
      object-fit: cover;
 }
 #main #container #About #footer_work {
-  height: 25vw;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-top: 1px solid #1C1C19;
-  margin: 2vw 2vw 2vw;
+  margin: 0 2vw 2vw;
   padding-top: 2vw;
 }
 #main #container #About #footer_work .work_one, #main #container #About #footer_work .work_two {
@@ -1089,6 +1091,7 @@ body, html {
   margin-top: 1vw;
   font-family: canopee;
   margin-bottom: 1vw;
+  font-weight: 100;
 }
 #main #container #About #footer_work .work_one h4 span, #main #container #About #footer_work .work_two h4 span {
   padding: 2px;
@@ -1108,7 +1111,6 @@ body, html {
   border-left: 1px solid #76736D;
   border-right: 1px solid #76736D;
   text-align: center;
-  padding: 0 1vw;
 }
 #main #container #About #footer_work .work_All h1 {
   font-family: canopee;
@@ -1180,20 +1182,22 @@ body, html {
   align-items: center;
   margin: 0 2vw;
   width: 100%;
-  height: 6vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 2vw 0;
 }
 #main #container #About #footer h4 {
   font-family: canopee;
-  font-size: 2vw;
+  font-size: max(2vw, 2vh);
   font-weight: 100;
   display: flex;
 }
 #main #container #About #footer h4 span {
   aspect-ratio: 1;
-  width: 1vw;
+  width: 2vw;
   border-radius: 100%;
   border: 1px solid #1C1C19;
-  font-size: 0.9vw;
+  font-size: 1vw;
   margin-left: 0.5vw;
 }
 #main #container #About #footer span {
@@ -1206,12 +1210,553 @@ body, html {
   text-decoration: none;
   color: #1C1C19;
   font-family: canopee;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.5vh);
 }
 #main #container #About #footer span .circle {
   aspect-ratio: 1;
-  width: 0.5vw;
+  width: max(0.5vw, 0.5vh);
   border-radius: 50%;
   background-color: #1C1C19;
   margin: 0 0.5vw;
+}
+
+@media screen and (max-width: 500px) {
+  #main #container .navcontainer .text {
+    display: none;
+  }
+  #main #container .navcontainer .hamburger {
+    margin-right: 2vw;
+  }
+  #main #container #About .about_text {
+    margin-top: 6vh;
+  }
+  #main #container #About .skills {
+    flex-direction: column;
+  }
+  #main #container #About .skills .myImage {
+    border: 0;
+    width: 100%;
+  }
+  #main #container #About .skills .myImage .myimage {
+    width: 100%;
+    height: 100%;
+  }
+  #main #container #About .skills .myImage h1 {
+    font-size: 19.5vw;
+    line-height: 20vw;
+  }
+  #main #container #About .skills .myImage h1 #me {
+    font-size: 20vw;
+  }
+  #main #container #About .skills .myImage #a {
+    font-size: 5vh;
+  }
+  #main #container #About .skills .myImage h4 {
+    font-size: 4vh;
+    line-height: 4vh;
+  }
+  #main #container #About .skills .myImage p {
+    font-size: 4vh;
+    line-height: 4vh;
+  }
+  #main #container #About .skills .skill {
+    margin-top: 5vw;
+    padding: 0;
+  }
+  #main #container #About .skills .skill .currentskill .skill_name h1 {
+    font-size: 4vh;
+  }
+  #main #container #About .skills .skill .currentskill .skill_name .circle {
+    width: 3vh;
+    height: 3vh;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 {
+    gap: 2vh;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .c {
+    transform: translateX(-20%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .c .img_div {
+    width: 6vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .c .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .c .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .c .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .c .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .python {
+    transform: translateX(2%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .python .img_div {
+    width: 10vh;
+    height: 10vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .python .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .python .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .python .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .python .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .java {
+    transform: translateX(-5%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .java .img_div {
+    width: 6vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .java .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .java .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .java .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .java .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .javascript {
+    transform: translateX(-14%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .javascript .img_div {
+    width: 6vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .javascript .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .javascript .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .javascript .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 .javascript .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 {
+    gap: 2vh;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .TypeScript {
+    transform: translateX(5%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .TypeScript .img_div {
+    width: 8vh;
+    height: 8vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .TypeScript .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .TypeScript .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .TypeScript .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .TypeScript .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .HTML {
+    transform: translateX(0);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .HTML .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .HTML .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .HTML .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .HTML .img_div {
+    width: 7vh;
+    height: 7vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .HTML .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .CSS {
+    transform: translateX(-9%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .CSS .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .CSS .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .CSS .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .CSS .img_div {
+    width: 6vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .CSS .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .Gsap {
+    transform: translateX(7%);
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .Gsap .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .Gsap .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .Gsap .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .Gsap .img_div {
+    width: 7vh;
+    height: 7vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .currentskill .currentskill_container .currentskill2 .Gsap .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_name .circle {
+    height: 3vh;
+    width: 3vh;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_name h1 {
+    font-size: 4vh;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill {
+    gap: 2vh;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .node {
+    transform: translateX(0);
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .node .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .node .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .node .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .node .img_div {
+    width: 13vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .node .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .express {
+    transform: translateX(2%);
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .express .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .express .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .express .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .express .img_div {
+    width: 23vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .express .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .mongo {
+    transform: translateX(0%);
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .mongo .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .mongo .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .mongo .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .mongo .img_div {
+    width: 12vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .mongo .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .next .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .next .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .next .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .next .img_div {
+    width: 18vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .working_on .workingskill_container .workingonskill .next .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .softskill .softskill_name .circle {
+    width: 3vh;
+    height: 3vh;
+  }
+  #main #container #About .skills .skill .softskill .softskill_name h1 {
+    font-size: 4vh;
+  }
+  #main #container #About .skills .skill .softskill .soft_container {
+    gap: 2vh;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .xd {
+    transform: translateX(2%);
+  }
+  #main #container #About .skills .skill .softskill .soft_container .xd .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .xd .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .xd .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .xd .img_div {
+    width: 12vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .xd .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .figma {
+    transform: translateX(2%);
+  }
+  #main #container #About .skills .skill .softskill .soft_container .figma .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .figma .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .figma .text h1 {
+    font-size: 2vh;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .figma .img_div {
+    width: 7vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .figma .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .blender {
+    transform: translateX(-2%);
+  }
+  #main #container #About .skills .skill .softskill .soft_container .blender .text {
+    font-family: editorial;
+    margin-left: 1vw;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .blender .text p {
+    font-size: 2vh;
+    font-weight: 200;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .blender .text h1 {
+    font-size: 2vw;
+    font-weight: 900;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .blender .img_div {
+    width: 13vh;
+    height: 6vh;
+    overflow: hidden;
+  }
+  #main #container #About .skills .skill .softskill .soft_container .blender .img_div img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #main #container #About .workexperience {
+    margin-top: 3vh;
+  }
+  #main #container #About .workexperience h3 {
+    font-size: 3vh;
+  }
+  #main #container #About .workexperience .workcards {
+    flex-direction: column;
+    gap: 2vw;
+    margin-top: 2vh;
+  }
+  #main #container #About .workexperience .workcards .opportunity, #main #container #About .workexperience .workcards .freelance, #main #container #About .workexperience .workcards .work {
+    width: 96vw;
+    height: 60vw;
+  }
+  #main #container #About .workexperience .workcards .opportunity .contain, #main #container #About .workexperience .workcards .freelance .contain, #main #container #About .workexperience .workcards .work .contain {
+    width: 90vw;
+    height: 95%;
+  }
+  #main #container #About .workexperience .workcards .opportunity .contain h1, #main #container #About .workexperience .workcards .freelance .contain h1, #main #container #About .workexperience .workcards .work .contain h1 {
+    font-size: 4vh;
+    line-height: 4vh;
+    margin-bottom: 1vh;
+  }
+  #main #container #About .workexperience .workcards .opportunity .contain p, #main #container #About .workexperience .workcards .freelance .contain p, #main #container #About .workexperience .workcards .work .contain p {
+    font-size: 2vh;
+    margin-top: 2vh;
+  }
+  #main #container #About .workexperience .workcards .opportunity .contain h4, #main #container #About .workexperience .workcards .freelance .contain h4, #main #container #About .workexperience .workcards .work .contain h4 {
+    font-size: 2vh;
+    margin-top: 2vh;
+  }
+  #main #container #About .workexperience .workcards .work h4 {
+    font-size: 3vh;
+  }
+  #main #container #About .clientwork h1 {
+    font-size: 5vh;
+    line-height: 5vh;
+  }
+  #main #container #About .clientwork h1 span {
+    font-size: 5vh;
+  }
+  #main #container #About .clientImage .image1, #main #container #About .clientImage .image2 {
+    width: 96vw;
+    height: 96vw;
+    margin-bottom: 2vh;
+  }
+  #main #container #About .clientImage .image2 {
+    display: none;
+  }
+  #main #container #About #footer_work .work_one h4, #main #container #About #footer_work .work_two h4 {
+    font-size: 1.5vh;
+  }
+  #main #container #About #footer_work .work_one h4 span, #main #container #About #footer_work .work_two h4 span {
+    font-size: 1.2vh;
+  }
+  #main #container #About #footer_work .work_one p, #main #container #About #footer_work .work_two p {
+    font-size: 0.8vh;
+  }
+  #main #container #About #footer_work .work_All h3 {
+    font-size: 1.5vh;
+  }
+  #main #container #About #footer_work .work_All p {
+    font-size: 1.2vh;
+  }
+  #main #container #About #footer h4 span {
+    width: 3vw;
+    font-size: 1vh;
+  }
+  #main #container #About #footer span {
+    transform: translateX(-10%);
+  }
 }/*# sourceMappingURL=About.css.map */
