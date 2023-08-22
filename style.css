@@ -954,7 +954,7 @@ html, body {
   margin: 0 0.5vw;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   #main .pagecontainer .navcontainer .text {
     display: none;
   }
