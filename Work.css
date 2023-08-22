@@ -922,7 +922,7 @@ body, html {
   margin: 0 0.5vw;
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .navcontainer {
     height: 7vh !important;
     position: relative !important;
@@ -942,7 +942,7 @@ body, html {
     margin-bottom: 1vw !important;
   }
   #Work #header {
-    display: block !important;
+    flex-direction: column !important;
     margin-top: 2vw !important;
   }
   #Work #header .hero_text {

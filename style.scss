@@ -181,8 +181,8 @@ html,body{
          }
 
         .links{
-           font-size: 15vw;
-           line-height: 13.5vw;
+           font-size: max(15vw,10vh);
+           line-height: max(13.5vw,9vh);
            font-family: canopee;
            transition: .9s ease-in-out;
            opacity: 0;
@@ -210,7 +210,7 @@ html,body{
               text-decoration: none;
               color: $navlink_color;
               font-family: canopee;
-              font-size: 1.5vw;
+              font-size: max(1.5vw,2vh);
            }
   
            .circle{
@@ -226,7 +226,7 @@ html,body{
       .navcontainer{
          position: fixed;
          width: 100vw;
-         height: 6vw;
+         height: max(6vw,5vh);
          border: 1px solid $line_color;
          z-index: 2;
          top: 0;
@@ -251,7 +251,7 @@ html,body{
             h5{
                font-family: canopee;
                font-weight: 10;
-               font-size: 1.5vw;
+               font-size: max(1.5vw,1.2vh);
                width: 10vw;
                &.colorchange{
                   color: $navlink_color;
@@ -262,7 +262,7 @@ html,body{
                width: 30%;
                text-align: center;
                img{
-                  width: 10vw;
+                  width: max(10vw,10vh);
                }
             } 
             .hamburger{
@@ -274,10 +274,10 @@ html,body{
                .linecontainer{
                   cursor: pointer;
                   .line{
-                     width: 2vw;
-                     height: .2vw;
+                     width: max(2vw,2vh);
+                     height: max(.2vw,.2vh);
                      background-color: $font_back;
-                     margin-bottom: .2vw;
+                     margin-bottom: max(.2vw,.2vh);
                      transition: all ease .3s;
 
                      &.linecolor{
@@ -309,8 +309,8 @@ html,body{
       position: relative;
       
    .header{
-      height: 25vw;
-      margin-top: 8vw;
+      height: fit-content;
+      margin-top: max(8vw,6vh);
       @include flexProperty(space-around);
    
       .work1{
@@ -335,14 +335,15 @@ html,body{
          }
 
          h4{
-            font-size: 1.5vw;
+            font-size: max(1.5vw,1.5vh);
             margin-top: 1vw;
             font-family: canopee;
+            font-weight: 100;
             margin-bottom: 1vw;
             span{
                padding: 2px;
                border-radius: 2px;
-               font-size: 1.2vw;
+               font-size: max(1.2vw,1.2vh);
                font-weight: 100;
                color: white;
                background-color: $new_color;
@@ -350,7 +351,7 @@ html,body{
          }
 
          p{
-            font-size: 1.3vw;
+            font-size: max(1.3vw,.8vh);
             font-family: editorial;
 
          }
@@ -372,14 +373,14 @@ html,body{
         h3{
          font-family:editorial;
          font-weight: 20;
-         font-size: 2.5vw;
+         font-size: max(2.5vw,1.5vh);
          margin-bottom: 2vw;
         }
 
         p{
          font-family: editorial;
          font-weight: 100;
-         font-size: 1.5vw;
+         font-size: max(1.5vw,1.2vh);
          span{
             font-family: canopee;
             font-weight: bolder;
@@ -391,14 +392,14 @@ html,body{
       }
    }
    
-   #curate{
+   .curate{
     font-size: 34vw;
     letter-spacing: -1.5vw;
     font-weight: 300;
     font-family: domaine;
     background-color: #1C1C19;
     color: #C4BCB3;
-    line-height:31vw;
+    line-height:max(31vw);
     width: 96%;
     margin-top: 2vw;
     margin-left: 2vw;
@@ -446,21 +447,21 @@ html,body{
          .info1-text2{
            margin-top: 2vw;
             span{
-               font-size: 6vw;
+               font-size: max(6vw,5vh);
                color: $navlink_color;
                background-color: $navbg_color;
                font-family: canopee;
                margin-left: 2vw;
-               height: 6vw;
+               height: fit-content;
                float: left; 
                padding:.02vw .5vw;
                border-radius: 10%;
                margin-right: .5vw;
             }
             p{
-              font-size: 3vw;
+               font-size: max(3vw,3vh);
               font-family: editorial;
-              line-height: 3vw;
+              line-height: max(3vw,3vh);
               margin: 0 2vw 0 2vw;
             }
          }
@@ -575,7 +576,7 @@ html,body{
                border-right: 1px solid $font_back;
                h1{
                   text-align: left;
-                 font-size: 4vw;
+                 font-size: max(4vw,3vh);
                  font-family: canopee; 
                  font-weight: 100;
                  letter-spacing: .02vw;
@@ -586,15 +587,15 @@ html,body{
                   text-align: left;
                   font-family: editorial;
                   font-weight: 90;
-                  font-size: 2.5vw;
+                  font-size: max(2.5vw,2vh);
                   color: $navbg_color;
-                  line-height: 3vw;
+                  line-height: max(3vw,2.5vh);
                }
 
                h4{
                   font-family: editorial;
                   font-weight: 200;
-                  font-size: 2vw;
+                  font-size: max(2vw,2vh);
                   margin-top: 2vw;
 
                   span{
@@ -626,12 +627,12 @@ html,body{
                h3{
                   font-family: canopee;
                   font-weight: 200;
-                  font-size: 2vw;
+                  font-size: max(4vw,3vh);
                   margin-bottom: .5vw;
                }
                p{
                   font-family: editorial;
-                  font-size: 1.2vw;
+                  font-size: max(1.5vw,1.2vh);
                }
             }
          }
@@ -646,17 +647,16 @@ html,body{
       .deliver{
          @include flexProperty(space-between);
          flex-direction: column;
-         margin-left: 1vw;
 
          h1{
             font-family: canopee;
             color: $font_back;
-            font-size: 6.5vw;
+            font-size: max(6.5vw,8.5vh);
             font-weight: 200;
             margin-bottom: 5vw;
 
             span{
-               font-size: 13.5vw;
+               font-size: max(13.5vw,13vh);
                font-weight: 500;
                background-color: $font_back;
                color: $navlink_color;
@@ -665,13 +665,13 @@ html,body{
 
          .first_part{
             font-family: editorial;
-            font-size: 2vw;
+            font-size: max(2vw,2vh);
             font-weight: 90;
             color: $font_back;
             margin-left: 1vw;
 
             .A{
-               font-size: 5vw;
+               font-size: max(5vw,5vh);
                background-color: $font_back;
                color: $navlink_color;
                font-family: canopee;
@@ -684,7 +684,7 @@ html,body{
 
          .second_part{
             font-family: editorial;
-            font-size: 2vw;
+            font-size: max(2vw,2vh);
             font-weight: 90;
             color: $font_back;
             margin:2vw 0 0 1vw;
@@ -879,7 +879,7 @@ html,body{
          .text{
             p{
                font-family: editorial;
-               font-size: 1.5vw;
+               font-size: max(1.5vw);
                font-weight: 100;
             }
    
@@ -894,7 +894,7 @@ html,body{
    }
 
    #footer_work{
-      height: 25vw;
+      height: fit-content;
       @include flexProperty(space-around);
       border-top: 1px solid $font_back;
       margin: 0 2vw 2vw;
@@ -922,14 +922,16 @@ html,body{
          }
 
          h4{
-            font-size: 1.5vw;
+            font-size: max(1.5vw,1.5vh);
             margin-top: 1vw;
             font-family: canopee;
             margin-bottom: 1vw;
+            font-weight: 100;
+
             span{
                padding: 2px;
                border-radius: 2px;
-               font-size: 1.2vw;
+               font-size: max(1.2vw,1.2vh);
                font-weight: 100;
                color: white;
                background-color: $new_color;
@@ -937,7 +939,7 @@ html,body{
          }
 
          p{
-            font-size: 1.3vw;
+            font-size: max(1.3vw,.8vh);
             font-family: editorial;
 
          }
@@ -959,14 +961,14 @@ html,body{
         h3{
          font-family:editorial;
          font-weight: 20;
-         font-size: 2.5vw;
+         font-size: max(2.5vw,1.5vh);
          margin-bottom: 2vw;
         }
 
         p{
          font-family: editorial;
          font-weight: 100;
-         font-size: 1.5vw;
+         font-size: max(1.5vw,1.2vh);
          span{
             font-family: canopee;
             font-weight: bolder;
@@ -1031,20 +1033,20 @@ html,body{
       align-items: center;
       margin: 0 2vw;
       width: 100%;
-      height: 6vw;
+      height: max(6vw,5vh);
 
       h4{
          font-family: canopee;
-         font-size: 2vw;
+         font-size: max(2vw,2vh);
          font-weight: 100;
          display: flex;
 
          span{
             aspect-ratio: 1;
-            width: 1vw;
+            width: 2vw;
             border-radius: 100%;
             border: 1px solid $font_back;
-            font-size: .9vw;
+            font-size: 1vw;
             margin-left: .5vw;
          }
       }
@@ -1059,12 +1061,12 @@ html,body{
             text-decoration: none;
             color: $font_back;
             font-family: canopee;
-            font-size: 1.5vw;
+            font-size: max(1.5vw,1.5vh);
          }
 
          .circle{
             aspect-ratio: 1;
-            width: .5vw;
+            width: max(.5vw,.5vh);
             border-radius: 50%;
             background-color: $font_back;
             margin: 0 .5vw;
@@ -1075,20 +1077,142 @@ html,body{
 }
 }
 
-@media (max-width: 768px) {
+@media  screen and (max-width: 480px) {
    #main{
-      .navlinks{
-         .links{
-            font-size: 50vw;
-         }
-      }
+      .pagecontainer{
+         .navcontainer{
+            .text{
+               display: none;
+            }
 
-      .navcontainer{
-         width: 20px;
+            .hamburger{
+               margin-right: 2vw;
+            }
+         }
+
+         #page{
+           .info{
+               padding: 0;
+               flex-direction: column-reverse;
+
+               .info1{
+                  margin-top: 3vh;
+                  border: 0;
+                  width: 96vw;
+
+                  .info1-text1{
+                     h3{
+                        font-size: 23vw;
+                     }
+
+                     h1{
+                        font-size: 26vw;
+                        line-height: 23vw;
+                     }
+                  }
+
+                  .info1-image{
+                     width: 100%;
+                     img{
+                        width: 100%;
+                        height: 20%;
+                     }
+                  }
+               }
+               
+               .info2{
+                  .info2-image{
+                     img{
+                        width: 96vw;
+                        height: 30vh;
+                     }
+                  }
+
+                  .info2-text{
+                     h1{
+                        font-size: 12vw;
+                        line-height: 10vw;
+                     }
+                  }
+               }
+           }
+
+           #All_work{
+               flex-direction: column;
+
+               .upcoming_container{
+                  border: 0;
+                  width: 100%;
+
+                  .upcoming{
+                     width: 100%;
+                     gap: 1vw;
+                     justify-content: center;
+
+                     .upcoming_first{
+                        width: 50%;
+                        border: 0;
+                     }
+                     .upcoming_second{
+                        width: 50%;
+                        padding-left: 2vw;
+                        border-left: 1px solid $font_back;
+
+                        .imagecontainer{
+                           width: 95%;
+                           height: 100%;
+                        }
+                     }
+                  }
+
+                  .upcoming_image{
+                     margin-right: 1vw;
+                     img{
+                        width: 100%;
+                     }
+                  }
+               }
+
+               .deliver{
+                  justify-content: space-around;
+                 
+                  .btn{
+                     width: 50%;
+                     height: 15vw;
+                     h1{
+                        left: 30%;
+                     }
+                  }
+               }
+           }
+
+           #hero_container{
+               .hero_three{
+
+                  .text{
+                     p{
+                        font-size: 2vw;
+                     }
+                  }
+               }
+           }
+
+           #footer{
+               h4{
+                  span{
+                     width: 3vw;
+                     font-size: 1vh;
+                  }
+               }
+
+               span{
+                  transform: translateX(-10%);
+               }
+           }
+         }
       }
    }
 }
-
 
 
 

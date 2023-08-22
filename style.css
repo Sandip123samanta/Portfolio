@@ -161,8 +161,8 @@ html, body {
   pointer-events: all;
 }
 #main .pagecontainer .navlinks .links {
-  font-size: 15vw;
-  line-height: 13.5vw;
+  font-size: max(15vw, 10vh);
+  line-height: max(13.5vw, 9vh);
   font-family: canopee;
   transition: 0.9s ease-in-out;
   opacity: 0;
@@ -186,7 +186,7 @@ html, body {
   text-decoration: none;
   color: #BEB5AB;
   font-family: canopee;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 2vh);
 }
 #main .pagecontainer .navlinks span .circle {
   aspect-ratio: 1;
@@ -198,7 +198,7 @@ html, body {
 #main .pagecontainer .navcontainer {
   position: fixed;
   width: 100vw;
-  height: 6vw;
+  height: max(6vw, 5vh);
   border: 1px solid #76736D;
   z-index: 2;
   top: 0;
@@ -224,7 +224,7 @@ html, body {
 #main .pagecontainer .navcontainer nav .text h5 {
   font-family: canopee;
   font-weight: 10;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.2vh);
   width: 10vw;
 }
 #main .pagecontainer .navcontainer nav .text h5.colorchange {
@@ -235,7 +235,7 @@ html, body {
   text-align: center;
 }
 #main .pagecontainer .navcontainer nav .imgdiv img {
-  width: 10vw;
+  width: max(10vw, 10vh);
 }
 #main .pagecontainer .navcontainer nav .hamburger {
   width: 30%;
@@ -247,10 +247,10 @@ html, body {
   cursor: pointer;
 }
 #main .pagecontainer .navcontainer nav .hamburger .linecontainer .line {
-  width: 2vw;
-  height: 0.2vw;
+  width: max(2vw, 2vh);
+  height: max(0.2vw, 0.2vh);
   background-color: #1C1C19;
-  margin-bottom: 0.2vw;
+  margin-bottom: max(0.2vw, 0.2vh);
   transition: all ease 0.3s;
 }
 #main .pagecontainer .navcontainer nav .hamburger .linecontainer .line.linecolor:first-child {
@@ -272,8 +272,9 @@ html, body {
   position: relative;
 }
 #main .pagecontainer #page .header {
-  height: 25vw;
-  margin-top: 8vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-top: max(8vw, 6vh);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -299,21 +300,22 @@ html, body {
   scale: 1.1;
 }
 #main .pagecontainer #page .header .work1 h4, #main .pagecontainer #page .header .work2 h4 {
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.5vh);
   margin-top: 1vw;
   font-family: canopee;
+  font-weight: 100;
   margin-bottom: 1vw;
 }
 #main .pagecontainer #page .header .work1 h4 span, #main .pagecontainer #page .header .work2 h4 span {
   padding: 2px;
   border-radius: 2px;
-  font-size: 1.2vw;
+  font-size: max(1.2vw, 1.2vh);
   font-weight: 100;
   color: white;
   background-color: #B93C12;
 }
 #main .pagecontainer #page .header .work1 p, #main .pagecontainer #page .header .work2 p {
-  font-size: 1.3vw;
+  font-size: max(1.3vw, 0.8vh);
   font-family: editorial;
 }
 #main .pagecontainer #page .header .workAll {
@@ -332,19 +334,19 @@ html, body {
 #main .pagecontainer #page .header .workAll h3 {
   font-family: editorial;
   font-weight: 20;
-  font-size: 2.5vw;
+  font-size: max(2.5vw, 1.5vh);
   margin-bottom: 2vw;
 }
 #main .pagecontainer #page .header .workAll p {
   font-family: editorial;
   font-weight: 100;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.2vh);
 }
 #main .pagecontainer #page .header .workAll p span {
   font-family: canopee;
   font-weight: bolder;
 }
-#main .pagecontainer #page #curate {
+#main .pagecontainer #page .curate {
   font-size: 34vw;
   letter-spacing: -1.5vw;
   font-weight: 300;
@@ -399,21 +401,22 @@ html, body {
   margin-top: 2vw;
 }
 #main .pagecontainer #page .info .info1 .info1-text2 span {
-  font-size: 6vw;
+  font-size: max(6vw, 5vh);
   color: #BEB5AB;
   background-color: #1D1D1B;
   font-family: canopee;
   margin-left: 2vw;
-  height: 6vw;
+  height: -moz-fit-content;
+  height: fit-content;
   float: left;
   padding: 0.02vw 0.5vw;
   border-radius: 10%;
   margin-right: 0.5vw;
 }
 #main .pagecontainer #page .info .info1 .info1-text2 p {
-  font-size: 3vw;
+  font-size: max(3vw, 3vh);
   font-family: editorial;
-  line-height: 3vw;
+  line-height: max(3vw, 3vh);
   margin: 0 2vw 0 2vw;
 }
 #main .pagecontainer #page .info .info2 {
@@ -524,7 +527,7 @@ html, body {
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h1 {
   text-align: left;
-  font-size: 4vw;
+  font-size: max(4vw, 3vh);
   font-family: canopee;
   font-weight: 100;
   letter-spacing: 0.02vw;
@@ -534,14 +537,14 @@ html, body {
   text-align: left;
   font-family: editorial;
   font-weight: 90;
-  font-size: 2.5vw;
+  font-size: max(2.5vw, 2vh);
   color: #1D1D1B;
-  line-height: 3vw;
+  line-height: max(3vw, 2.5vh);
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 {
   font-family: editorial;
   font-weight: 200;
-  font-size: 2vw;
+  font-size: max(2vw, 2vh);
   margin-top: 2vw;
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first h4 span {
@@ -569,12 +572,12 @@ html, body {
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second h3 {
   font-family: canopee;
   font-weight: 200;
-  font-size: 2vw;
+  font-size: max(4vw, 3vh);
   margin-bottom: 0.5vw;
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second p {
   font-family: editorial;
-  font-size: 1.2vw;
+  font-size: max(1.5vw, 1.2vh);
 }
 #main .pagecontainer #page #All_work .upcoming_container .upcoming_image img {
   width: 60vw;
@@ -584,30 +587,29 @@ html, body {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  margin-left: 1vw;
 }
 #main .pagecontainer #page #All_work .deliver h1 {
   font-family: canopee;
   color: #1C1C19;
-  font-size: 6.5vw;
+  font-size: max(6.5vw, 8.5vh);
   font-weight: 200;
   margin-bottom: 5vw;
 }
 #main .pagecontainer #page #All_work .deliver h1 span {
-  font-size: 13.5vw;
+  font-size: max(13.5vw, 13vh);
   font-weight: 500;
   background-color: #1C1C19;
   color: #BEB5AB;
 }
 #main .pagecontainer #page #All_work .deliver .first_part {
   font-family: editorial;
-  font-size: 2vw;
+  font-size: max(2vw, 2vh);
   font-weight: 90;
   color: #1C1C19;
   margin-left: 1vw;
 }
 #main .pagecontainer #page #All_work .deliver .first_part .A {
-  font-size: 5vw;
+  font-size: max(5vw, 5vh);
   background-color: #1C1C19;
   color: #BEB5AB;
   font-family: canopee;
@@ -618,7 +620,7 @@ html, body {
 }
 #main .pagecontainer #page #All_work .deliver .second_part {
   font-family: editorial;
-  font-size: 2vw;
+  font-size: max(2vw, 2vh);
   font-weight: 90;
   color: #1C1C19;
   margin: 2vw 0 0 1vw;
@@ -791,7 +793,8 @@ html, body {
   font-weight: 900;
 }
 #main .pagecontainer #page #footer_work {
-  height: 25vw;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -820,21 +823,22 @@ html, body {
   scale: 1.1;
 }
 #main .pagecontainer #page #footer_work .work_one h4, #main .pagecontainer #page #footer_work .work_two h4 {
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.5vh);
   margin-top: 1vw;
   font-family: canopee;
   margin-bottom: 1vw;
+  font-weight: 100;
 }
 #main .pagecontainer #page #footer_work .work_one h4 span, #main .pagecontainer #page #footer_work .work_two h4 span {
   padding: 2px;
   border-radius: 2px;
-  font-size: 1.2vw;
+  font-size: max(1.2vw, 1.2vh);
   font-weight: 100;
   color: white;
   background-color: #B93C12;
 }
 #main .pagecontainer #page #footer_work .work_one p, #main .pagecontainer #page #footer_work .work_two p {
-  font-size: 1.3vw;
+  font-size: max(1.3vw, 0.8vh);
   font-family: editorial;
 }
 #main .pagecontainer #page #footer_work .work_All {
@@ -853,13 +857,13 @@ html, body {
 #main .pagecontainer #page #footer_work .work_All h3 {
   font-family: editorial;
   font-weight: 20;
-  font-size: 2.5vw;
+  font-size: max(2.5vw, 1.5vh);
   margin-bottom: 2vw;
 }
 #main .pagecontainer #page #footer_work .work_All p {
   font-family: editorial;
   font-weight: 100;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.2vh);
 }
 #main .pagecontainer #page #footer_work .work_All p span {
   font-family: canopee;
@@ -914,20 +918,20 @@ html, body {
   align-items: center;
   margin: 0 2vw;
   width: 100%;
-  height: 6vw;
+  height: max(6vw, 5vh);
 }
 #main .pagecontainer #page #footer h4 {
   font-family: canopee;
-  font-size: 2vw;
+  font-size: max(2vw, 2vh);
   font-weight: 100;
   display: flex;
 }
 #main .pagecontainer #page #footer h4 span {
   aspect-ratio: 1;
-  width: 1vw;
+  width: 2vw;
   border-radius: 100%;
   border: 1px solid #1C1C19;
-  font-size: 0.9vw;
+  font-size: 1vw;
   margin-left: 0.5vw;
 }
 #main .pagecontainer #page #footer span {
@@ -940,21 +944,103 @@ html, body {
   text-decoration: none;
   color: #1C1C19;
   font-family: canopee;
-  font-size: 1.5vw;
+  font-size: max(1.5vw, 1.5vh);
 }
 #main .pagecontainer #page #footer span .circle {
   aspect-ratio: 1;
-  width: 0.5vw;
+  width: max(0.5vw, 0.5vh);
   border-radius: 50%;
   background-color: #1C1C19;
   margin: 0 0.5vw;
 }
 
-@media (max-width: 768px) {
-  #main .navlinks .links {
-    font-size: 50vw;
+@media screen and (max-width: 480px) {
+  #main .pagecontainer .navcontainer .text {
+    display: none;
   }
-  #main .navcontainer {
-    width: 20px;
+  #main .pagecontainer .navcontainer .hamburger {
+    margin-right: 2vw;
+  }
+  #main .pagecontainer #page .info {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+  #main .pagecontainer #page .info .info1 {
+    margin-top: 3vh;
+    border: 0;
+    width: 96vw;
+  }
+  #main .pagecontainer #page .info .info1 .info1-text1 h3 {
+    font-size: 23vw;
+  }
+  #main .pagecontainer #page .info .info1 .info1-text1 h1 {
+    font-size: 26vw;
+    line-height: 23vw;
+  }
+  #main .pagecontainer #page .info .info1 .info1-image {
+    width: 100%;
+  }
+  #main .pagecontainer #page .info .info1 .info1-image img {
+    width: 100%;
+    height: 20%;
+  }
+  #main .pagecontainer #page .info .info2 .info2-image img {
+    width: 96vw;
+    height: 30vh;
+  }
+  #main .pagecontainer #page .info .info2 .info2-text h1 {
+    font-size: 12vw;
+    line-height: 10vw;
+  }
+  #main .pagecontainer #page #All_work {
+    flex-direction: column;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container {
+    border: 0;
+    width: 100%;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming {
+    width: 100%;
+    gap: 1vw;
+    justify-content: center;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_first {
+    width: 50%;
+    border: 0;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second {
+    width: 50%;
+    padding-left: 2vw;
+    border-left: 1px solid #1C1C19;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming .upcoming_second .imagecontainer {
+    width: 95%;
+    height: 100%;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming_image {
+    margin-right: 1vw;
+  }
+  #main .pagecontainer #page #All_work .upcoming_container .upcoming_image img {
+    width: 100%;
+  }
+  #main .pagecontainer #page #All_work .deliver {
+    justify-content: space-around;
+  }
+  #main .pagecontainer #page #All_work .deliver .btn {
+    width: 50%;
+    height: 15vw;
+  }
+  #main .pagecontainer #page #All_work .deliver .btn h1 {
+    left: 30%;
+  }
+  #main .pagecontainer #page #hero_container .hero_three .text p {
+    font-size: 2vw;
+  }
+  #main .pagecontainer #page #footer h4 span {
+    width: 3vw;
+    font-size: 1vh;
+  }
+  #main .pagecontainer #page #footer span {
+    transform: translateX(-10%);
   }
 }/*# sourceMappingURL=style.css.map */

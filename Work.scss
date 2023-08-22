@@ -312,7 +312,7 @@
 
          .hero_text{
             margin-top: 8vw;
-            width: (94vw / 2);
+            width: 47vw;
             margin-right: 2vw;
             border-right: 1px solid $font_back;
             padding-right: 1vw;
@@ -1040,7 +1040,7 @@
    }
 }
 
-@media (max-width: 480px){
+@media screen and (max-width: 480px){
    .navcontainer{
       height: 7vh !important;
       position:  relative !important;
@@ -1067,9 +1067,10 @@
       }
    }
 
+
    #Work{
       #header {
-         display: block !important;
+         flex-direction: column !important;
          margin-top: 2vw !important;
          .hero_text{
             margin-top: 0 !important;
