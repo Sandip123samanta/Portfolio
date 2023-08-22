@@ -52,8 +52,6 @@ else{
         scale: 1
     })
 
-    cursor.setAttribute('style','display: none;')
-
     let currentvalue = 0;
     const logo = document.getElementById('#logo');
 
@@ -73,6 +71,12 @@ else{
     })    
 })
 }
+
+
+if ('ontouchstart' in window || navigator.maxTouchPoints) {
+   cursor.setAttribute('style','display: none;');
+}
+
 
 const text = document.querySelector('#website .myimage .circle .text p');
 text.innerHTML = text.innerHTML.split("").map(

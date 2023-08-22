@@ -575,7 +575,7 @@ html,body{
                width: 30vw;
                border-right: 1px solid $font_back;
                h1{
-                  text-align: left;
+                 text-align: left;
                  font-size: max(4vw,3vh);
                  font-family: canopee; 
                  font-weight: 100;
@@ -651,7 +651,7 @@ html,body{
          h1{
             font-family: canopee;
             color: $font_back;
-            font-size: max(6.5vw,8.5vh);
+            font-size: 6.5vw;
             font-weight: 200;
             margin-bottom: 5vw;
 
@@ -1077,6 +1077,15 @@ html,body{
 }
 }
 
+
+@media screen and (max-width: 769px) {
+   .loader{
+      display: none;
+      pointer-events: none;
+   }
+}
+
+
 @media  screen and (max-width: 500px) {
    #main{
       .pagecontainer{
@@ -1176,6 +1185,10 @@ html,body{
                .deliver{
                   justify-content: space-around;
                  
+
+                  h1{
+                     font-size: 8.5vh;
+                  }
                   .btn{
                      width: 50%;
                      height: 15vw;
