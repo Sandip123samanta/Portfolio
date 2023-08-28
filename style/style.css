@@ -480,7 +480,7 @@ html, body {
   width: 18vw;
   aspect-ratio: 1;
   border-radius: 50%;
-  background: url(./resources/my_image.jpg);
+  background: url(/resources/my_image.jpg);
   background-position: center;
   background-size: contain;
   filter: contrast(90%);
@@ -1004,10 +1004,14 @@ html, body {
   }
   #main .pagecontainer #page .info .info1 .info1-image {
     width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
   #main .pagecontainer #page .info .info1 .info1-image img {
     width: 100%;
-    height: 20%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   #main .pagecontainer #page .info .info1 .info1-text2 span {
     font-size: 5vh;
