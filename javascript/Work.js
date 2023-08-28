@@ -57,6 +57,12 @@ hamburger.addEventListener('click', () => {
     west.classList.toggle('colorchange');
 });
 
+//web-projects section
+
+const link = document.querySelectorAll("#web-projects ul li .link");
+
+const linkHoverReveal = document.querySelectorAll("#web-projects ul li .link .hover-reveal");
+const linkImage = document.querySelectorAll("#web-projects ul li .link .hover-reveal .hidden-img");
 
 
 //custom cursor
@@ -70,6 +76,44 @@ const isdesktop = window.matchMedia('(min-width: 769px)').matches;
 
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
   cursor.setAttribute('style','display: none;');
+
+  link.forEach( el => {
+    el.addEventListener("click", ()=> {
+      el.nextElementSibling.classList.toggle('active');
+    })
+  })
+}
+else{
+  for(let i = 0; i < link.length; i++) {
+    link[i].addEventListener('mousemove', (e) => {
+      linkHoverReveal[i].style.opacity = 1;
+      linkHoverReveal[i].style.transform = `translate(-100%, -50% ) rotate(5deg)`;
+      linkImage[i].style.transform = 'scale(1, 1)';
+      linkHoverReveal[i].style.left = e.clientX + "px";
+    })
+    
+    link[i].addEventListener('mouseleave', (e) => {
+      linkHoverReveal[i].style.opacity = 0;
+      linkHoverReveal[i].style.transform = `translate(-50%, -50%) rotate(-5deg)`;
+      linkImage[i].style.transform = 'scale(0.8, 0.8)';
+    })
+  }
+
+  link[0].addEventListener('click',()=>{
+    location.href = 'https://github.com/Sandip123samanta/Portfolio';
+  })
+  link[1].addEventListener('click',()=>{
+    location.href = 'https://github.com/Sandip123samanta/Portfolio';
+  })
+  link[2].addEventListener('click',()=>{
+    location.href = 'https://github.com/Sandip123samanta/Portfolio';
+  })
+  link[3].addEventListener('click',()=>{
+    location.href = 'https://github.com/Sandip123samanta/Portfolio';
+  })
+  link[4].addEventListener('click',()=>{
+    location.href = 'https://github.com/Sandip123samanta/Portfolio';
+  })
 }
 
 
@@ -110,44 +154,3 @@ function onMouseHoverOut() {
     scale: 1
   })
 }
-
-
-//project slider
-
-const projects_container = document.querySelector('.project_container');
-const projects = document.querySelectorAll('.project');
-
-const leftarrow = document.querySelector('.leftarrow');
-const rightarrow = document.querySelector('.rightarrow');
-
-let counter = 1;
-const size = projects[0].clientWidth;
-
-
-
-rightarrow.addEventListener('click', ()=>{
-  if(counter >= projects.length - 1) return;
-  projects_container.style.transition = "transform 0.4s ease-in-out";
-  counter++;
-  projects_container.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-leftarrow.addEventListener('click', ()=>{
-  if(counter <= 0) return;
-  projects_container.style.transition = "transform 0.4s ease-in-out";
-  counter--;
-  projects_container.style.transform = 'translateX(' + (-size * counter) + 'px)';
-});
-
-projects_container.addEventListener('transitionend', ()=>{
-  if(projects[counter].id === 'lastproject_clone'){
-    projects_container.style.transition ="none" ;
-    counter = projects.length -2;
-    projects_container.style.transform ='translateX(-' + (-size*counter)+'px)';
-  }
-  if(projects[counter].id === 'firstproject_clone'){
-    projects_container.style.transition ="none" ;
-    counter = projects.length - counter;
-    projects_container.style.transform ='translateX(-' + (-size*counter)+'px)';
-  }
-});

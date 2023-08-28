@@ -21,6 +21,7 @@ const hoverables = document.querySelectorAll('.hoverables');
 const images = document.querySelectorAll('img');
 const cursor = document.querySelector('.cursor');
 
+
 //loader
 var tl = gsap.timeline()
 
@@ -123,8 +124,6 @@ function onMouseHoverOut() {
     scale: 1
   })
 }
-
-
 
 
 hamburger.addEventListener('click', () => {
