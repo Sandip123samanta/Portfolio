@@ -413,11 +413,9 @@
       }
 
       #web-projects{
-         min-height: 150vh;
+         min-height: 60vw;
          display: grid;
-         overflow: hidden;
          place-items: center;
-        
 
          ul{
             width: 95%;
@@ -477,11 +475,6 @@
                      }
                   }
                }
-               .active{
-                  max-height: 0;
-                  overflow: hidden;
-                  display: none;
-               }
 
                .document-container{
                   margin: 2vw 0 2vw;
@@ -489,7 +482,9 @@
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
+                  height: 0;
                   overflow: hidden;
+                  transition: all .4s ease-out;
 
                   .demo-project{
                      width: 40vw;

@@ -9,7 +9,7 @@ const cursor = document.querySelector('.cursor');
 //preloader animation
 let currentvalue = 0;
 const logo = document.getElementById('#logo');
-const isdesktop = window.matchMedia('(min-width: 769px)').matches;
+const isdesktop = window.matchMedia('(min-width: 501px)').matches;
 
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
   cursor.setAttribute('style','display: none;');
@@ -53,30 +53,38 @@ hamburger.addEventListener('click', () => {
     west.classList.toggle('colorchange');
 });
 
-
-
-
-
-
-
-const curentskill = document.querySelector('.skill_name');
-const curentskill_container = document.querySelector('.currentskill_container')
-const workingon = document.querySelector('.workingskill_name');
-const workingskill_container = document.querySelector('.workingskill_container');
+//skill dropdown
+const currentskill_name = document.querySelector('.skill_name');
+const currentskill_container = document.querySelector('.currentskill_container');
+const working_skill = document.querySelector('.workingskill_name');
+const working_container = document.querySelector('.workingskill_container');
 const softskill = document.querySelector('.softskill_name');
-const soft_container = document.querySelector('.soft_container');
+const softskill_container = document.querySelector('.soft_container');
 
-curentskill.addEventListener('click', ()=>{
-    curentskill_container.classList.toggle('active');
-})
+function skillactive(skillname,skillcontainer,vw,vh){
+  skillname.addEventListener('click',()=>{
+    if( parseInt(skillcontainer.style.height) === 0){
+      if(isdesktop){
+        let viewportwidth = window.innerWidth || document.documentElement.clientWidth;
+        skillcontainer.style.height = (viewportwidth * vw) / 100 + 'px';
+      }
+      else{
+        let viewportheight = window.innerHeight || document.documentElement.clientHeight;
+        skillcontainer.style.height = (viewportheight * vh) / 100 + 'px';
+      }
+    }
+  
+    else{
+      skillcontainer.style.height = '0px';
+    }
+  })
+}
 
-workingon.addEventListener('click', ()=>{
-    workingskill_container.classList.toggle('active');
-})
+skillactive(currentskill_name,currentskill_container,40,96.5);
+skillactive(working_skill,working_container,40,60);
+skillactive(softskill,softskill_container,30,45);
 
-softskill.addEventListener('click', ()=>{
-    soft_container.classList.toggle('active');
-})
+
 
 var tl = gsap.timeline()
 
@@ -150,4 +158,3 @@ function onMouseHoverOut() {
     scale: 1
   })
 }
-

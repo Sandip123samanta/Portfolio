@@ -401,18 +401,17 @@ body, html {
   font-size: 5vw;
   color: #1C1C19;
 }
-#main #container #About .skills .skill .currentskill .active {
-  max-height: 0vw;
-  overflow: hidden;
-}
 #main #container #About .skills .skill .currentskill .currentskill_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 0;
+  overflow: hidden;
   gap: 2vw;
   text-align: left;
   padding: 0 2vw;
   border-bottom: 1px solid #1C1C19;
+  transition: all 0.5s ease-out;
 }
 #main #container #About .skills .skill .currentskill .currentskill_container .currentskill1 {
   display: flex;
@@ -689,10 +688,9 @@ body, html {
   padding: 0 2vw;
   border-bottom: 1px solid #1C1C19;
   margin-top: 2vw;
-}
-#main #container #About .skills .skill .working_on .workingskill_container.active {
-  max-height: 0vw;
+  height: 0;
   overflow: hidden;
+  transition: all 0.5s ease-out;
 }
 #main #container #About .skills .skill .working_on .workingskill_container .workingonskill {
   display: flex;
@@ -853,10 +851,9 @@ body, html {
   padding: 0 2vw;
   border-bottom: 1px solid #1C1C19;
   margin-top: 2vw;
-}
-#main #container #About .skills .skill .softskill .soft_container.active {
-  max-height: 0vw;
+  height: 0;
   overflow: hidden;
+  transition: all 0.5s ease-out;
 }
 #main #container #About .skills .skill .softskill .soft_container .software {
   display: flex;

@@ -370,9 +370,8 @@ body, html {
      object-fit: cover;
 }
 #main #container #Work #web-projects {
-  min-height: 150vh;
+  min-height: 60vw;
   display: grid;
-  overflow: hidden;
   place-items: center;
 }
 #main #container #Work #web-projects ul {
@@ -430,18 +429,15 @@ body, html {
   position: relative;
   transition: transform 0.4s ease-out;
 }
-#main #container #Work #web-projects ul li .active {
-  max-height: 0;
-  overflow: hidden;
-  display: none;
-}
 #main #container #Work #web-projects ul li .document-container {
   margin: 2vw 0 2vw;
   width: 96vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 0;
   overflow: hidden;
+  transition: all 0.4s ease-out;
 }
 #main #container #Work #web-projects ul li .document-container .demo-project {
   width: 40vw;

@@ -61,6 +61,8 @@ hamburger.addEventListener('click', () => {
 
 const link = document.querySelectorAll("#web-projects ul li .link");
 
+const document_container = document.querySelectorAll('.document-container');
+
 const linkHoverReveal = document.querySelectorAll("#web-projects ul li .link .hover-reveal");
 const linkImage = document.querySelectorAll("#web-projects ul li .link .hover-reveal .hidden-img");
 
@@ -77,11 +79,24 @@ const isdesktop = window.matchMedia('(min-width: 769px)').matches;
 if ('ontouchstart' in window || navigator.maxTouchPoints) {
   cursor.setAttribute('style','display: none;');
 
-  link.forEach( el => {
-    el.addEventListener("click", ()=> {
-      el.nextElementSibling.classList.toggle('active');
+  for(let i =0 ; i<link.length;i++){
+    link[i].addEventListener('click',()=>{
+      const viewportwidth = window.innerWidth || document.documentElement.clientWidth;
+      if( parseInt(document_container[i].style.height) === 0){
+        document_container[i].style.height = (viewportwidth * 30) /100 + 'px';
+      }
+      else{
+        document_container[i].style.height = '0px';
+      }
+
+      for(let j=0;j<document_container.length;j++){
+        if(i!=j){
+          document_container[j].style.height = '0px';
+        }
+      }
     })
-  })
+  }
+  
 }
 else{
   for(let i = 0; i < link.length; i++) {

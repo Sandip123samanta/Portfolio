@@ -435,19 +435,17 @@
                         }
 
                     }
-
-                    .active{
-                      max-height: 0vw;
-                      overflow: hidden;
-                    }
-                    
-                    
+                            
                     .currentskill_container{
                         @include flexProperty(space-between);
+                        height: 0;
+                        overflow: hidden;
                         gap: 2vw;
                         text-align: left;
                         padding: 0 2vw;
                         border-bottom: 1px solid $font_back;
+                        transition: all 0.5s ease-out;
+                        
 
                         .currentskill1{
                             @include flexProperty(space-between);
@@ -563,11 +561,9 @@
                         padding: 0 2vw;
                         border-bottom: 1px solid $font_back;
                         margin-top: 2vw;
-
-                        &.active{
-                            max-height: 0vw;
-                            overflow: hidden;
-                        }
+                        height: 0;
+                        overflow: hidden;
+                        transition: all .5s ease-out;
 
                         .workingonskill{
                             @include flexProperty(space-between);
@@ -649,11 +645,9 @@
                         padding: 0 2vw;
                         border-bottom: 1px solid $font_back;
                         margin-top: 2vw;
-
-                        &.active{
-                            max-height: 0vw;
-                            overflow: hidden;
-                        }
+                        height: 0;
+                        overflow: hidden;
+                        transition: all .5s ease-out;
 
                        .software{
                             @include flexProperty(center);
@@ -1145,7 +1139,7 @@
                         }
 
                         .workingskill_container{
-                      
+                          
                             .workingonskill{
                                 gap: 2vh;
                                 .node{
