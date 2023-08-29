@@ -157,6 +157,42 @@ html,body{
          mix-blend-mode: multiply;
       } 
 
+      .nav_lander1{
+         position: absolute;
+         top: 0;
+         left: 0;
+         height: 100vh;
+         width: 100vw;
+         background-color: rgb(87, 87, 87);
+         transform: translateY(-100vh);
+         transition: all .3s ease-out;
+         z-index: 1;
+         opacity: 0;
+      
+         &.open{
+            transform: translateY(0%);
+            opacity: 1;
+         }
+      }
+
+      .nav_lander2{
+         position: absolute;
+         top: 0;
+         left: 0;
+         height: 100vh;
+         width: 100vw;
+         background-color: rgb(37, 36, 36);
+         transform: translateY(-100vh);
+         transition: all .6s ease-out;
+         z-index: 2;
+         opacity: 0;
+      
+         &.open{
+            transform: translateY(0%);
+            opacity: 1;
+         }
+      }
+
       .navlinks{
          background-color: $navbg;
          color: $navlink_color;
@@ -165,18 +201,18 @@ html,body{
          left: 0%;
          height: 100vh;
          width: 100vw;
-         z-index: 1;
-         clip-path: circle(10vw at 50% -20%);
-         -webkit-clip-path: circle(10vw at 50% -20%);
+         z-index: 3;
+         transform: translateY(-100vh);
          transition: all 1s ease-out;
          @include flexProperty(center);
          flex-direction: column;
          padding-top: 5vw;
          pointer-events: none;
+         opacity: 0;
 
          &.open{
-            clip-path: circle(300vw at 50% -20%);
-            -webkit-clip-path: circle(300vw at 50% -20%);
+            transform: translateY(0%);
+            opacity: 1;
             pointer-events: all;
          }
 
@@ -228,12 +264,12 @@ html,body{
          width: 100vw;
          height: fit-content;
          border: 1px solid $line_color;
-         z-index: 2;
+         z-index: 4;
          top: 0;
          left: 0;
          padding: 2vw 0;
          background-color: $navlink_color;
-         transition: 1s all ease-in-out;
+         transition: all .2s ease-out;
 
          &.bg_color{
             background-color:$font_back;

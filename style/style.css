@@ -136,6 +136,38 @@ html, body {
   background-color: #C0B9B0;
   mix-blend-mode: multiply;
 }
+#main .pagecontainer .nav_lander1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(87, 87, 87);
+  transform: translateY(-100vh);
+  transition: all 0.3s ease-out;
+  z-index: 1;
+  opacity: 0;
+}
+#main .pagecontainer .nav_lander1.open {
+  transform: translateY(0%);
+  opacity: 1;
+}
+#main .pagecontainer .nav_lander2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(37, 36, 36);
+  transform: translateY(-100vh);
+  transition: all 0.6s ease-out;
+  z-index: 2;
+  opacity: 0;
+}
+#main .pagecontainer .nav_lander2.open {
+  transform: translateY(0%);
+  opacity: 1;
+}
 #main .pagecontainer .navlinks {
   background-color: #1D1D1B;
   color: #BEB5AB;
@@ -144,9 +176,8 @@ html, body {
   left: 0%;
   height: 100vh;
   width: 100vw;
-  z-index: 1;
-  clip-path: circle(10vw at 50% -20%);
-  -webkit-clip-path: circle(10vw at 50% -20%);
+  z-index: 3;
+  transform: translateY(-100vh);
   transition: all 1s ease-out;
   display: flex;
   justify-content: center;
@@ -154,10 +185,11 @@ html, body {
   flex-direction: column;
   padding-top: 5vw;
   pointer-events: none;
+  opacity: 0;
 }
 #main .pagecontainer .navlinks.open {
-  clip-path: circle(300vw at 50% -20%);
-  -webkit-clip-path: circle(300vw at 50% -20%);
+  transform: translateY(0%);
+  opacity: 1;
   pointer-events: all;
 }
 #main .pagecontainer .navlinks .links {
@@ -201,12 +233,12 @@ html, body {
   height: -moz-fit-content;
   height: fit-content;
   border: 1px solid #76736D;
-  z-index: 2;
+  z-index: 4;
   top: 0;
   left: 0;
   padding: 2vw 0;
   background-color: #BEB5AB;
-  transition: 1s all ease-in-out;
+  transition: all 0.2s ease-out;
 }
 #main .pagecontainer .navcontainer.bg_color {
   background-color: #1C1C19;

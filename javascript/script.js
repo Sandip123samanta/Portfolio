@@ -13,6 +13,8 @@ const links = document.querySelectorAll('.links');
 const navbar = document.querySelector('.navcontainer');
 const west = document.querySelector('.navcontainer nav .text h5');
 const lines = document.querySelectorAll('.line');
+const navlander1 = document.querySelector('.nav_lander1');
+const navlander2 = document.querySelector('.nav_lander2');
 
 //custom cursor
 const bigBall = document.querySelector('.cursor__ball--big');
@@ -127,6 +129,8 @@ function onMouseHoverOut() {
 
 
 hamburger.addEventListener('click', () => {
+    navlander1.classList.toggle('open');
+    navlander2.classList.toggle('open');
     navlinks.classList.toggle('open');
     links.forEach(e => {
         e.classList.toggle('fade');
